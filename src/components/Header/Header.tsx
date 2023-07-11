@@ -235,7 +235,7 @@ function Header() {
         </div>
         <nav className="pt-7">
           <ul className="flex flex-wrap gap-5">
-            {navbarItems.map((item) => {
+            {navbarItems.map((item, index) => {
               return (
                 <NavbarItem
                   id={item.id}
@@ -243,6 +243,7 @@ function Header() {
                   href={item.href}
                   label={item.label}
                   submenu={item.submenu}
+                  key={index}
                 />
               );
             })}

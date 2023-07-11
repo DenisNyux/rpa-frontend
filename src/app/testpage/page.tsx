@@ -1,16 +1,9 @@
 import React from "react";
 
-function TestPage({ children }: { children: React.ReactNode }) {
+function TestPage() {
   return (
     <>
-    <nav>
-      navbartest
-    </nav>
-  <main>
-    <div>
-      {children}
-    </div>
-  </main>
+  testpage
   </>
   );
 }

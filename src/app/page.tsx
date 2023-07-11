@@ -50,6 +50,7 @@ export default function Home() {
               image={link.image}
               href={link.href}
               title={link.title}
+              key={`link-${index}`}
             />
           ))}
         </div>

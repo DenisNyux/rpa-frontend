@@ -17,7 +17,7 @@ function Footer() {
         <a className="text-[#5e050d]">Лицензия</a>
         <a className="text-[#5e050d]">Политика конфиденциальности</a>
         </span>
-      
+
     </div>
   );
 }
