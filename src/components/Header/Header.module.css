@@ -1,0 +1,21 @@
+.social__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social__text__title {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.social__text__value {
+    color: var(--logo-color);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

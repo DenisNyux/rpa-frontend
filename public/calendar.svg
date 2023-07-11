@@ -1,0 +1,8 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Calendar_duotone_line">
+<path id="Rectangle 26" d="M25 83.3333C25 67.6199 25 59.7631 29.8816 54.8816C34.7631 50 42.6198 50 58.3333 50H141.667C157.38 50 165.237 50 170.118 54.8816C175 59.7631 175 67.6198 175 83.3333V91.6667H25V83.3333Z" stroke="#F2F2F2" stroke-width="10"/>
+<rect id="Rectangle 25" x="25" y="50" width="150" height="125" rx="16.6667" stroke="#F2F2F2" stroke-width="10"/>
+<path id="Line 1" d="M66.6667 25L66.6667 58.3333" stroke="#F2F2F2" stroke-width="10" stroke-linecap="round"/>
+<path id="Line 2" d="M133.333 25L133.333 58.3333" stroke="#F2F2F2" stroke-width="10" stroke-linecap="round"/>
+</g>
+</svg>
