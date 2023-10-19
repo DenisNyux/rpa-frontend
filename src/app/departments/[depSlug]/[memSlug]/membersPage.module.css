@@ -1,0 +1,7 @@
+.memberText span {
+    font-size: 1.25rem;
+}
+
+.memberText span p:nth-child(1) {
+    font-weight: 700;
+}

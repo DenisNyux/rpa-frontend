@@ -1,11 +1,14 @@
 import React from "react";
 
+import getVideoId from "@/lib/getVideoId";
+
 import styles from "./YoutubeVideo.module.css";
 
 interface YoutubeVideoProps {
-  videoId: string;
+  videoLink: string | null | undefined;
 }
-function YoutubeVideo({ videoId }: YoutubeVideoProps) {
+function YoutubeVideo({ videoLink }: YoutubeVideoProps) {
+  const videoId = getVideoId(videoLink);
   return (
     <div className={styles.responsiveVideo}>
       <iframe

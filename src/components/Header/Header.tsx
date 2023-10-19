@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Dropdown from "./Dropdown/Dropdown";
 
 import styles from "./Header.module.css";
 
@@ -57,8 +59,8 @@ function Header() {
             {
               id: "0-0-5",
               label: "Координационный совет",
-              name: "revision-group",
-              href: "/revision-group",
+              name: "coordination-group",
+              href: "/coordination-group",
               submenu: null,
             },
             {
@@ -90,52 +92,52 @@ function Header() {
       id: "1",
       label: "Члены РПА",
       name: "members",
-      href: "/members",
+      href: "/departments",
       submenu: null,
     },
-    {
-      id: "2",
-      label: "Мероприятия",
-      name: "events",
-      href: "/events",
-      submenu: [
-        {
-          id: "2-0",
-          label: "Супервизия для специалистов",
-          name: "specialist-supervision",
-          href: "/specialist-supervision",
-          submenu: null,
-        },
-        {
-          id: "2-1",
-          label: '"Психическое здоровье сегодня"',
-          name: "psychological-health",
-          href: "/psychological-health",
-          submenu: null,
-        },
-        {
-          id: "2-2",
-          label: 'Ежемесячные встречи РО',
-          name: "monthly-meetings",
-          href: "/monthly-meetings",
-          submenu: null,
-        },
-        {
-          id: "2-3",
-          label: 'Конференции',
-          name: "conferences",
-          href: "/conferences",
-          submenu: null,
-        },
-        {
-          id: "2-4",
-          label: 'Сертифицированные программы',
-          name: "approved-programs",
-          href: "/approved-programs",
-          submenu: null,
-        }
-      ],
-    },
+    // {
+    //   id: "2",
+    //   label: "Мероприятия",
+    //   name: "events",
+    //   href: "/events",
+    //   submenu: [
+    //     {
+    //       id: "2-0",
+    //       label: "Супервизия для специалистов",
+    //       name: "specialist-supervision",
+    //       href: "/specialist-supervision",
+    //       submenu: null,
+    //     },
+    //     {
+    //       id: "2-1",
+    //       label: '"Психическое здоровье сегодня"',
+    //       name: "psychological-health",
+    //       href: "/psychological-health",
+    //       submenu: null,
+    //     },
+    //     {
+    //       id: "2-2",
+    //       label: 'Ежемесячные встречи РО',
+    //       name: "monthly-meetings",
+    //       href: "/monthly-meetings",
+    //       submenu: null,
+    //     },
+    //     {
+    //       id: "2-3",
+    //       label: 'Конференции',
+    //       name: "conferences",
+    //       href: "/conferences",
+    //       submenu: null,
+    //     },
+    //     {
+    //       id: "2-4",
+    //       label: 'Сертифицированные программы',
+    //       name: "approved-programs",
+    //       href: "/approved-programs",
+    //       submenu: null,
+    //     }
+    //   ],
+    // },
     {
       id: "3",
       label: "Документы",
@@ -150,47 +152,50 @@ function Header() {
       href: "/news",
       submenu: null,
     },
-    {
-      id: "5",
-      label: "Вступить в РПА",
-      name: "join",
-      href: "/join",
-      submenu: null,
-    },
-    {
-      id: "6",
-      label: "Членский взнос",
-      name: "payment",
-      href: "/payment",
-      submenu: null,
-    },
-    {
-      id: "7",
-      label: "Супервизии",
-      name: "supervisions",
-      href: "/supervisions",
-      submenu: null,
-    },
-    {
-      id: "8",
-      label: "Секции",
-      name: "sections",
-      href: "/sections",
-      submenu: null,
-    },
+    // {
+    //   id: "5",
+    //   label: "Вступить в РПА",
+    //   name: "join",
+    //   href: "/join",
+    //   submenu: null,
+    // },
+    // {
+    //   id: "6",
+    //   label: "Членский взнос",
+    //   name: "payment",
+    //   href: "/payment",
+    //   submenu: null,
+    // },
+    // {
+    //   id: "7",
+    //   label: "Супервизии",
+    //   name: "supervisions",
+    //   href: "/supervisions",
+    //   submenu: null,
+    // },
+    // {
+    //   id: "8",
+    //   label: "Секции",
+    //   name: "sections",
+    //   href: "/sections",
+    //   submenu: null,
+    // },
   ];
 
   return (
     <div className="flex p-6 w-full border-b-[1px] border-black	">
       <div className="flex gap-5 w-1/2 border-r-[1px] border-black pr-6">
         <div className="w-1/3 relative">
-        <Image
-          src="/rpa-logo.svg"
-          fill = {true}
-          alt="rpa-logo"
-          className="w-auto h-auto"
-        />
+          <Link href="/">
+            <Image
+              src="/rpa-logo.svg"
+              fill={true}
+              alt="rpa-logo"
+              className="w-auto h-auto"
+            />
+          </Link>
         </div>
+
         <div className="flex flex-col gap-4">
           <h1>Российская психотерапевтическая ассоциация</h1>
           <span className="subheader">
@@ -236,6 +241,19 @@ function Header() {
         <nav className="pt-7">
           <ul className="flex flex-wrap gap-5">
             {navbarItems.map((item, index) => {
+              if (item.submenu) {
+                return (
+                  <Dropdown dropdownItems={item.submenu} key={index}>
+                    <NavbarItem
+                      id={item.id}
+                      name={item.name}
+                      href={item.href}
+                      label={item.label}
+                      submenu={item.submenu}
+                    />
+                  </Dropdown>
+                );
+              }
               return (
                 <NavbarItem
                   id={item.id}

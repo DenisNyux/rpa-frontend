@@ -1,0 +1,36 @@
+.dropdownWindow {
+    position: absolute;
+    padding: 1.25rem;
+    top: 100%;
+    left: 0;
+    background: rgb(var(--background-rgb));
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    height: 0;
+    opacity: 0;
+    z-index: -10;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dropdownWindow.active {
+    z-index: 10;
+    opacity: 1;
+    height: fit-content;
+    transition: all 0.5s ease;
+}
+
+.dropdownWindow.innerDropdown {
+    left: 100%;
+    top: 0;
+}
+
+.dropdownWindow li>a>img {
+    transform: rotate(-90deg) scale(0.5);
+} 
+
+.dropdownWindow li>a>h4 {
+    font-size: 0.875rem;
+}
+

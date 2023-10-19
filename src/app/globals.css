@@ -59,6 +59,19 @@ span {
   transform: scale(0.95);
 }
 
+.clickable__animation__no__brightness {
+  transition: all 0.2s;
+}
+
+.clickable__animation__no__brightness:hover {
+  transform: scale(0.95);
+}
+
+.default__shadow {
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 @media screen and (max-width: 2560px) {
   html {
     font-size: 140%;

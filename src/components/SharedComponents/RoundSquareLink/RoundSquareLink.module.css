@@ -1,0 +1,10 @@
+.squaredLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 20px;
+    width: 100%;
+    border: 1px solid var(--logo-color);
+}
+

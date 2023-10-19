@@ -1,18 +1,22 @@
 import Image from "next/image";
 
+import getHomepageText from "@/api/singlePages/getHomepageText";
+
+import { HomepageTextResponse } from "@/types/Singlepages";
+
 import YoutubeVideo from "@/components/SharedComponents/YoutubeVideo/YoutubeVideo";
 import SquareLink from "@/components/Homepage/SquareLink/SquareLink";
 
-export default function Home() {
+export default async function Home() {
   const squareLinks = [
     {
       title: "Члены РПА",
-      href: "/",
+      href: "/departments",
       image: "/member.svg",
     },
     {
       title: "Документы",
-      href: "/",
+      href: "/documents",
       image: "/document.svg",
     },
     {
@@ -27,21 +31,29 @@ export default function Home() {
     },
   ];
 
+  const homepageData: Promise<HomepageTextResponse> = await getHomepageText();
+  const homepageText = (await homepageData).data.attributes.mainText;
+  const homepageLink = (await homepageData).data.attributes.videoLink;
+
+
   return (
     <div className="mt-8 mb-8 ml-16 mr-16">
       <div className="flex w-full">
         <div className="w-1/2 flex flex-col gap-8 pr-6">
           <h2>Добро пожаловать на сайт РПА!</h2>
           <div className="w-full">
-            <YoutubeVideo videoId="BK7egvDg5L8" />
+            <YoutubeVideo videoLink={homepageLink} />
           </div>
-          <span>
-            Общественная организация “Российская Психотерапевтическая
+          <span className="text-base">
+            {/* Общественная организация “Российская Психотерапевтическая
             Ассоциация” является добровольным общественным объединением врачей и
             других специалистов, работающих в области психотерапии, созданным в
             целях совершенствования их профессиональной, научной,
             просветительской деятельности и повышения эффективности
-            психотерапевтической помощи населению.
+            психотерапевтической помощи населению. */}
+            {
+              homepageText
+            }
           </span>
         </div>
         <div className="w-1/2 p-6 grid grid-cols-2 grid-rows-2 gap-6">

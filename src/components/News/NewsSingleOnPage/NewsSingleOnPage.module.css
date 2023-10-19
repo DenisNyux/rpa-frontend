@@ -1,0 +1,24 @@
+.newsSingleOnPage__rubrick {
+    color: #BA9E30;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+.newsSingleOnPage__newsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.newsSingleOnPage__newsTitle {
+    font-size: 2rem;
+}
+
+.newsSingleOnPage__readMore{
+    font-size: 0.8rem;
+    color: var(--logo-color);
+}

@@ -1,0 +1,49 @@
+.documentCard {
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: #FFF;
+    padding: 2rem 1.5rem;
+    height: fit-content;
+    min-height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.documentCard__mainDocument > span {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.documentCard__mainDocument {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.documentCard__attachment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.documentCard__attachmentTitle {
+    color: var(--logo-color);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.documentCard__attachment > span {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}

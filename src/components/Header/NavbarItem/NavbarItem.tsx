@@ -10,15 +10,20 @@ export interface NavbarItemType {
   submenu: NavbarItemType[] | null;
 }
 
-export function NavbarItem({ id, name, label, href, submenu }: NavbarItemType) {
+export function NavbarItem({ id, name, label, href, submenu }: NavbarItemType){
   return (
     <div className="clickable__animation">
       {submenu ? (
         <li key={id}>
-            <div className="flex gap-1">
+            <Link href={href} className="flex gap-1">
               <h4>{label}</h4>
-              <Image src='/submenu-arr.svg' width={20} height={10} alt="dropdown"></Image>
-            </div>
+              <Image
+                src="/submenu-arr.svg"
+                width={20}
+                height={10}
+                alt="dropdown"
+              ></Image>
+            </Link>
         </li>
       ) : (
         <li key={id}>
