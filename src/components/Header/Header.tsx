@@ -72,13 +72,13 @@ function Header() {
             },
           ],
         },
-        {
-          id: "0-1",
-          label: "Журнал",
-          name: "journal",
-          href: "/journal",
-          submenu: null,
-        },
+        // {
+        //   id: "0-1",
+        //   label: "Журнал",
+        //   name: "journal",
+        //   href: "/journal",
+        //   submenu: null,
+        // },
         {
           id: "0-2",
           label: "Устав",
@@ -95,49 +95,49 @@ function Header() {
       href: "/departments",
       submenu: null,
     },
-    // {
-    //   id: "2",
-    //   label: "Мероприятия",
-    //   name: "events",
-    //   href: "/events",
-    //   submenu: [
-    //     {
-    //       id: "2-0",
-    //       label: "Супервизия для специалистов",
-    //       name: "specialist-supervision",
-    //       href: "/specialist-supervision",
-    //       submenu: null,
-    //     },
-    //     {
-    //       id: "2-1",
-    //       label: '"Психическое здоровье сегодня"',
-    //       name: "psychological-health",
-    //       href: "/psychological-health",
-    //       submenu: null,
-    //     },
-    //     {
-    //       id: "2-2",
-    //       label: 'Ежемесячные встречи РО',
-    //       name: "monthly-meetings",
-    //       href: "/monthly-meetings",
-    //       submenu: null,
-    //     },
-    //     {
-    //       id: "2-3",
-    //       label: 'Конференции',
-    //       name: "conferences",
-    //       href: "/conferences",
-    //       submenu: null,
-    //     },
-    //     {
-    //       id: "2-4",
-    //       label: 'Сертифицированные программы',
-    //       name: "approved-programs",
-    //       href: "/approved-programs",
-    //       submenu: null,
-    //     }
-    //   ],
-    // },
+    {
+      id: "2",
+      label: "Мероприятия",
+      name: "events",
+      href: "/events",
+      submenu: [
+        {
+          id: "2-0",
+          label: "Супервизия для специалистов",
+          name: "specialist-supervision",
+          href: "/specialist-supervision",
+          submenu: null,
+        },
+        {
+          id: "2-1",
+          label: '"Психическое здоровье сегодня"',
+          name: "psychological-health",
+          href: "/psychological-health",
+          submenu: null,
+        },
+        {
+          id: "2-2",
+          label: 'Ежемесячные встречи РО',
+          name: "monthly-meetings",
+          href: "/monthly-meetings",
+          submenu: null,
+        },
+        {
+          id: "2-3",
+          label: 'Конференции',
+          name: "conferences",
+          href: "/conferences",
+          submenu: null,
+        },
+        {
+          id: "2-4",
+          label: 'Сертифицированные программы',
+          name: "approved-programs",
+          href: "/approved-programs",
+          submenu: null,
+        }
+      ],
+    },
     {
       id: "3",
       label: "Документы",
@@ -152,20 +152,20 @@ function Header() {
       href: "/news",
       submenu: null,
     },
-    // {
-    //   id: "5",
-    //   label: "Вступить в РПА",
-    //   name: "join",
-    //   href: "/join",
-    //   submenu: null,
-    // },
-    // {
-    //   id: "6",
-    //   label: "Членский взнос",
-    //   name: "payment",
-    //   href: "/payment",
-    //   submenu: null,
-    // },
+    {
+      id: "5",
+      label: "Вступить в РПА",
+      name: "join",
+      href: "/join",
+      submenu: null,
+    },
+    {
+      id: "6",
+      label: "Членский взнос",
+      name: "payment",
+      href: "/payment",
+      submenu: null,
+    },
     // {
     //   id: "7",
     //   label: "Супервизии",
@@ -173,13 +173,13 @@ function Header() {
     //   href: "/supervisions",
     //   submenu: null,
     // },
-    // {
-    //   id: "8",
-    //   label: "Секции",
-    //   name: "sections",
-    //   href: "/sections",
-    //   submenu: null,
-    // },
+    {
+      id: "8",
+      label: "Секции",
+      name: "sections",
+      href: "/sections",
+      submenu: null,
+    },
   ];
 
   return (
@@ -208,7 +208,7 @@ function Header() {
           <div className={styles.social__text}>
             <p className={styles.social__text__title}>Телефон</p>
             <a href="tel:+78129990403" className={styles.social__text__value}>
-              +7 (812) 999-04-03
+              +7 (912) 999-04-03
             </a>
           </div>
           <div className={styles.social__text}>
