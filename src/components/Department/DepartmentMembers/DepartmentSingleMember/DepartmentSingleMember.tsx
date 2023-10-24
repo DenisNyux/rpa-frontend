@@ -29,7 +29,12 @@ function DepartmentSingleMember({
       <h4 className="mb-4 font-bold">{memName}</h4>
       <div className="flex justify-between grid grid-cols-2 gap-2 grow">
         <div className={`${styles.departmentCard__image}`}>
-            <img src={memImage}/>
+            <Image
+            src={memImage}
+            alt="member-photo"
+            width={300}
+            height={400}
+            ></Image>
         </div>
         <div className={`${styles.departmentCard__information} flex flex-col justify-between gap-4`}>
           <div className="flex flex-col gap-2">

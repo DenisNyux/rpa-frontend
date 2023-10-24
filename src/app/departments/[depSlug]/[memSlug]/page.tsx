@@ -3,6 +3,7 @@ import { MemberType } from "@/types/MemberType";
 import Link from "next/link";
 import getFullImageUrl from "@/lib/getFullImageUrl";
 import styles from './membersPage.module.css'
+import Image from "next/image";
 
 type MemberPageProps = {
   params: {
@@ -31,7 +32,13 @@ async function MemberPage({ params }: MemberPageProps) {
    
     <div className="grid grid-cols-4 gap-8 mt-6">
       <div className="col-span-1">
-        <img src={getFullImageUrl(member.avatar.data.attributes.url, './member.svg')} alt="member-photo" className="w-full rounded-[40px]"/>
+        <Image
+          src={getFullImageUrl(member.avatar.data.attributes.url, './member.svg')}
+          alt="member-photo"
+          className="w-full rounded-[40px]"
+          width={300}
+          height={400}
+        ></Image>
       </div>
       <div className={`col-span-3 flex flex-col ${styles.memberText} gap-5`}>
       <span>

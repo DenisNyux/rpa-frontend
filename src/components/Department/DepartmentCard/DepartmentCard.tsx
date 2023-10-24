@@ -20,7 +20,7 @@ function DepartmentCard({
 }: DepartmentCardProps) {
   const fallbackDepartment = "/fallbackDepartment.svg";
   const depImage = getFullImageUrl(departmentImage, fallbackDepartment);
-
+  console.log(depImage, 'depImage')
   return (
     <Link href={`/departments/${departmentSlug}`} className="clickable__animation__no__brightness">
       <div
