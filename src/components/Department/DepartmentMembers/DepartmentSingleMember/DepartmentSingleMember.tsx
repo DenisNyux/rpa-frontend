@@ -25,7 +25,7 @@ function DepartmentSingleMember({
 
   // console.log(depSlug, 'depSingleMember')
   return (
-    <div className={`p-6 background-white ${styles.departmentCard} flex flex-col`}>
+    <div className={`p-6 background-white ${styles.departmentCard} flex flex-col aspect-square`}>
       <h4 className="mb-4 font-bold">{memName}</h4>
       <div className="flex justify-between grid grid-cols-2 gap-2 grow">
         <div className={`${styles.departmentCard__image}`}>

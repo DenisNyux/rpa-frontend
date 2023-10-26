@@ -20,7 +20,7 @@ function SquareLink({ image, title, href }: SquareLinkProps) {
             alt='link-ico'
             />
         </div>
-        <h4 className='text-white'>{title}</h4>
+        <h4 className='text-white pb-4'>{title}</h4>
     </Link>
   )
 }

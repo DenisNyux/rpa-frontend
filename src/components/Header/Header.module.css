@@ -19,3 +19,21 @@
     line-height: normal;
 }
 
+
+@media (max-width: 767px) {
+    .social__text__title {
+      text-align: center;
+    }
+    .social__text__value {
+        text-align: center;
+      }
+  }
+
+  @media (max-width: 374px) {
+    .social__text__title {
+      font-size: 0.75rem;
+    }
+    .social__text__value {
+        font-size: 0.75rem;
+      }
+  }

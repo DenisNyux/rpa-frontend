@@ -25,7 +25,7 @@ async function Departments() {
           <DepartmentCard
             departmentName={department.attributes.depTitle}
             departmentSlug={department.attributes.slug}
-            departmentImage={department.attributes.coat.data.attributes.url}
+            departmentImage={department.attributes.coat.data?.attributes.url}
             departmentId={department.id}
             key={index}
           />
