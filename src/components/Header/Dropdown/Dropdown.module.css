@@ -34,3 +34,14 @@
     font-size: 0.875rem;
 }
 
+@media screen and (max-width: 768px) {
+    .dropdownWindow {
+        position: static;
+        border: none;
+        box-shadow: none;
+        padding: 1.25rem 0 0 0;
+    }
+    .dropdownWindow li>a>img {
+        transform: rotate(0) scale(0.5);
+    } 
+}

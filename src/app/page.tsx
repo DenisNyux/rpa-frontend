@@ -37,9 +37,9 @@ export default async function Home() {
 
 
   return (
-    <div className="mt-8 mb-8 ml-16 mr-16">
-      <div className="flex w-full">
-        <div className="w-1/2 flex flex-col gap-8 pr-6">
+    <div className="my-8 mx-16 lg:mx-6 lg:my-8">
+      <div className="flex w-full lg:flex-col ">
+        <div className="w-1/2 flex flex-col gap-8 pr-6 lg:w-full">
           <h2>Добро пожаловать на сайт РПА!</h2>
           <div className="w-full">
             <YoutubeVideo videoLink={homepageLink} />
@@ -56,7 +56,7 @@ export default async function Home() {
             }
           </span>
         </div>
-        <div className="w-1/2 p-6 grid grid-cols-2 grid-rows-2 gap-6">
+        <div className="w-1/2 p-6 grid grid-cols-2 grid-rows-2 gap-6 lg:w-full lg:grid-cols-4 lg:grid-rows-1 lg:p-0 lg:py-6 md:gap-3 sm:grid-cols-2 sm:grid-rows-2">
           {squareLinks.map((link, index) => (
             <SquareLink
               image={link.image}

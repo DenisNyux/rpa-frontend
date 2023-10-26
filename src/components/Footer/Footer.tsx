@@ -13,7 +13,7 @@ function Footer() {
         </a>
       </div>
       <span>Российская психотерапевтическая ассоциация, {new Date().getFullYear()}</span>
-        <span className="flex gap-2">
+        <span className="flex gap-2 pb-10">
         <a className="text-[#5e050d]">Лицензия</a>
         <a className="text-[#5e050d]">Политика конфиденциальности</a>
         </span>

@@ -12,7 +12,7 @@ interface SquareLinkProps {
 function SquareLink({ image, title, href }: SquareLinkProps) {
   return (
     <Link href={href} className={`${styles.squareLink} aspect-square flex flex-col justify-center items-center gap-5 clickable__animation`}>
-        <div className='flex flex-col'>
+        <div className='flex flex-col items-center xl:w-11/12 lg:7/12'>
             <Image
             src={image}
             width={200}

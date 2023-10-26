@@ -12,7 +12,7 @@ export interface NavbarItemType {
 
 export function NavbarItem({ id, name, label, href, submenu }: NavbarItemType){
   return (
-    <div className="clickable__animation">
+    <div className="clickable__animation md:w-full md:flex md:items-center md:justify-center">
       {submenu ? (
         <li key={id}>
             <Link href={href} className="flex gap-1">
