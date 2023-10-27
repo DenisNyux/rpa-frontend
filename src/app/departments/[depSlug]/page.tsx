@@ -32,7 +32,7 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
 
   console.log(memberArr.length)
   return (
-    <div className="mt-6 mb-12 mx-36">
+    <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
       <Link href={"/departments"} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
 
       <h2 className="uppercase mt-6">{department.data[0].attributes.depTitle}</h2>

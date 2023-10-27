@@ -19,7 +19,7 @@ function DepartmentHead({headName, headEducation, headJob, headContacts, headIma
         headerTitle="Руководитель отделения"
         headerColor="rgba(0, 0, 0, 0.50)"
       />
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5 lg:grid-cols-2 md:grid-cols-1">
         <DepartmentSingleMember
           memName={headName}
           memEducation={headEducation}

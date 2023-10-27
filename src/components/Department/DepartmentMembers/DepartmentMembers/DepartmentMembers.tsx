@@ -17,7 +17,7 @@ function DepartmentMembers({membersArr, depSlug}: DepartmentMembersProps) {
         headerColor="rgba(0, 0, 0, 0.50)"
       />
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5 lg:grid-cols-2 md:grid-cols-1">
         {membersArr.map((member, idx) => (
           <DepartmentSingleMember
             memName={member.attributes.name}

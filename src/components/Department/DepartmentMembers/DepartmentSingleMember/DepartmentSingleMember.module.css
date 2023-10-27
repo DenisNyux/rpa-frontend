@@ -35,3 +35,14 @@
     border-radius: 40px;
     font-size: 0.75rem;
 }
+
+
+@media screen and (max-width: 1023px) {
+    .departmentCard__information span {
+        font-size: 1.125rem;
+    }
+
+    .departmentCard__information span p {
+        overflow: hidden;
+    }
+}

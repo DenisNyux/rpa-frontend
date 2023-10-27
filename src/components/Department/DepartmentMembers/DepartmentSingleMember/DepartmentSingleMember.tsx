@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import cutStringByWords from "@/lib/cutStringByWords";
+
 import styles from "./DepartmentSingleMember.module.css";
 
 type DepartmentSingleMemberProps = {
@@ -25,9 +27,9 @@ function DepartmentSingleMember({
 
   // console.log(depSlug, 'depSingleMember')
   return (
-    <div className={`p-6 background-white ${styles.departmentCard} flex flex-col aspect-square`}>
+    <div className={`p-6 background-white ${styles.departmentCard} flex flex-col aspect-square md:aspect-[4/3] sm:aspect-square`}>
       <h4 className="mb-4 font-bold">{memName}</h4>
-      <div className="flex justify-between grid grid-cols-2 gap-2 grow">
+      <div className="flex justify-between grid grid-cols-2 gap-2 grow h-10/12">
         <div className={`${styles.departmentCard__image}`}>
             <Image
             src={memImage}
@@ -40,15 +42,15 @@ function DepartmentSingleMember({
           <div className="flex flex-col gap-2">
             <span>
               <p>Образование:</p>
-              <p>{memEducation ? memEducation: "Не указано"}</p>
+              <p>{memEducation ? cutStringByWords(memEducation, 7): "Не указано"}</p>
             </span>
             <span>
               <p>Место работы:</p>
-              <p>{memJob ? memJob: "Не указано"}</p>
+              <p>{memJob ? cutStringByWords(memJob, 7): "Не указано"}</p>
             </span>
             <span>
               <p>Контакты</p>
-              <p>{memContacts ? memContacts: "Не указано"}</p>
+              <p>{memContacts ? cutStringByWords(memContacts, 5): "Не указано"}</p>
             </span>
           </div>
           <Link href={`/departments/${depSlug}/${memSlug}`} className={`${styles.departmentCard__button} clickable__animation`}>

@@ -2,3 +2,14 @@
     border-radius: 20px;
     background-color: #ffffff;
 }
+
+.departmentCard > div {
+    width: 80%;
+    height: 60%;
+}
+
+
+.departmentCard img {
+    width: auto;
+    height: 100%;
+}

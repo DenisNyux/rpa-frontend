@@ -17,9 +17,9 @@ async function Departments() {
   const sortedDepartments = departmentsArr.sort((a, b) => a.attributes.depTitle.localeCompare(b.attributes.depTitle));  
 
   return (
-    <div className="mt-6 mb-12 mx-36">
+    <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
     <BackButton href="/" text="На главную"></BackButton>
-    <div className=" grid grid-cols-4 gap-6 mt-6">
+    <div className=" grid grid-cols-4 gap-6 mt-6 lg:grid-cols-3 sm:grid-cols-2 ">
       {sortedDepartments.map((department, index) => {
         return (
           <DepartmentCard
