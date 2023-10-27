@@ -22,9 +22,9 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
   );
   const department = await departmentsData;
 
-  const headOfDepartment = department.data[0].attributes.headOfDep.data;
+  const headOfDepartment = department?.data[0].attributes.headOfDep.data;
 
-  const memberArr = department.data[0].attributes.members.data
+  const memberArr = department?.data[0].attributes.members.data
 
   const sortedMembers = memberArr.sort((a, b) => {
     return a.attributes.name.localeCompare(b.attributes.name);

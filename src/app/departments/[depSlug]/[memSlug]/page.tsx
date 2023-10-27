@@ -35,7 +35,7 @@ async function MemberPage({ params }: MemberPageProps) {
         <Image
           src={getFullImageUrl(member.avatar.data.attributes.url, './member.svg')}
           alt="member-photo"
-          className="w-full rounded-[40px]"
+          className="w-full rounded-[10px]"
           width={300}
           height={400}
         ></Image>

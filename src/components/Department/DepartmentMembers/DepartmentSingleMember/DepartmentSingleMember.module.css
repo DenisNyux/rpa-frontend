@@ -45,4 +45,9 @@
     .departmentCard__information span p {
         overflow: hidden;
     }
+
+    .departmentCard__button button {
+        font-size: 1.125rem;
+    
+    }
 }
