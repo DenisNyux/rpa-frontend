@@ -215,7 +215,7 @@ function Header() {
           >
             <p className={styles.social__text__title}>Телефон</p>
             <a href="tel:+78129990403" className={styles.social__text__value}>
-              +7 (912) 999-04-03
+              +7 (921) 999-04-03
             </a>
           </div>
           <div

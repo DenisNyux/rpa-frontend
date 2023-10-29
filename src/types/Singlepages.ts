@@ -1,3 +1,5 @@
+import { MemberType } from "./MemberType";
+
 export type HomepageTextResponse = {
   data: {
     id: number;
@@ -7,7 +9,7 @@ export type HomepageTextResponse = {
       updatedAt: string
       publishedAt: string
       locale: string
-      videoLink: string | null | undefined
+      videoLink: string | undefined
     };
   };
   meta: {};
@@ -27,3 +29,37 @@ export type AboutRpaTextResponse = {
   };
   meta: {};
 };
+
+export type PresidentDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      presidentAdditionalText: string | null | undefined
+      rpaMembers: {
+        data: MemberType
+      }
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+
+export type VisePresidentDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+

@@ -6,16 +6,13 @@ import { MemberType } from "@/types/MemberType";
 type DepartmentMembersProps = {
   membersArr: MemberType[],
   depSlug: string
+  isDepartment: boolean
 }
 
-function DepartmentMembers({membersArr, depSlug}: DepartmentMembersProps) {
+function DepartmentMembers({membersArr, depSlug, isDepartment}: DepartmentMembersProps) {
   // console.log(depSlug);
   return (
     <div className="my-8">
-      <LineSeparatedHeader
-        headerTitle="Члены отделения"
-        headerColor="rgba(0, 0, 0, 0.50)"
-      />
 
       <div className="grid grid-cols-3 gap-5 lg:grid-cols-2 md:grid-cols-1">
         {membersArr.map((member, idx) => (
@@ -28,6 +25,7 @@ function DepartmentMembers({membersArr, depSlug}: DepartmentMembersProps) {
             memImage={getFullImageUrl(member.attributes.avatar.data.attributes.url, "/member.svg")}
             memSlug={member.attributes.slug}
             key={idx}
+            isDepartment={isDepartment}
           />
         ))}
       </div>

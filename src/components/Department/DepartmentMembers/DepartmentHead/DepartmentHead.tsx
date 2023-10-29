@@ -1,5 +1,5 @@
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
-import DepartmentSingleMember from "../DepartmentSingleMember/DepartmentSingleMember";
+import DepartmentSingleMember from "../../../SharedComponents/DepartmentSingleMember/DepartmentSingleMember";
 import getFullImageUrl from "@/lib/getFullImageUrl";
 
 type DepartmentHeadProps = {
@@ -28,6 +28,7 @@ function DepartmentHead({headName, headEducation, headJob, headContacts, headIma
           memImage={getFullImageUrl(headImage, "/member.svg")}
           memSlug={headSlug}
           depSlug={depSlug}
+          isDepartment={true}
         />
        
        

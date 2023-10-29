@@ -8,7 +8,6 @@ import Image from "next/image";
 type MemberPageProps = {
   params: {
     memSlug: string;
-    depSlug: string;
   };
 };
 
@@ -26,7 +25,7 @@ async function MemberPage({ params }: MemberPageProps) {
   
   return <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
     
-    <Link href={`/departments/${params.depSlug}`} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
+    <Link href={`/vise-president/`} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
     
     <h2 className="mt-6">{member.name}</h2>
    

@@ -13,6 +13,7 @@ type DepartmentSingleMemberProps = {
   memImage: string;
   depSlug: string;
   memSlug: string;
+  isDepartment: boolean;
 };
 
 function DepartmentSingleMember({
@@ -23,6 +24,7 @@ function DepartmentSingleMember({
   memImage,
   depSlug,
   memSlug,
+  isDepartment
 }: DepartmentSingleMemberProps) {
 
   // console.log(depSlug, 'depSingleMember')
@@ -53,7 +55,7 @@ function DepartmentSingleMember({
               <p>{memContacts ? cutStringByWords(memContacts, 5): "Не указано"}</p>
             </span>
           </div>
-          <Link href={`/departments/${depSlug}/${memSlug}`} className={`${styles.departmentCard__button} clickable__animation`}>
+          <Link href={ isDepartment ? `/departments/${depSlug}/${memSlug}` : `/${depSlug}/${memSlug}` } className={`${styles.departmentCard__button} clickable__animation`}>
             <button>Подробнее →</button>
           </Link>
         </div>

@@ -13,7 +13,7 @@ function RoundSquareLink({ linkTitle, url, className }: RoundSquareLinkProps) {
       href={url}
       className={`${className ? className : ""} ${styles.squaredLink} clickable__animation`}
     >
-        <h4 className="font-bold p-4">{linkTitle}</h4>
+        <h4 className="font-bold p-4 text-center xs:text-base">{linkTitle}</h4>
     </Link>
   );
 }

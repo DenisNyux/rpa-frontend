@@ -3,7 +3,8 @@ import Link from "next/link";
 import { DepartmentData } from "@/types/DepartmentsType";
 import getDepartment from "@/api/departments/getDepartment";
 import DepartmentHead from "@/components/Department/DepartmentMembers/DepartmentHead/DepartmentHead";
-import DepartmentMembers from "@/components/Department/DepartmentMembers/DepartmentMembers/DepartmentMembers";
+import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
+import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
 
 type DepartmentPageProps = {
   params: {
@@ -15,7 +16,6 @@ type DepartmentResponse = {
   data: DepartmentData[];
 };
 
-// TODO: Add 404 message if department not found
 async function DepartmentPage({ params }: DepartmentPageProps) {
   const departmentsData: Promise<DepartmentResponse> = getDepartment(
     params.depSlug
@@ -48,7 +48,7 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
         />
       )}
 
-      {memberArr.length > 0 ? <DepartmentMembers membersArr={sortedMembers} depSlug={params.depSlug}/> : ''}
+      {memberArr.length > 0 ? <> <LineSeparatedHeader headerTitle="Члены отделения" headerColor="rgba(0, 0, 0, 0.50)" ></LineSeparatedHeader><DepartmentMembers membersArr={sortedMembers} depSlug={params.depSlug} isDepartment={true}/></> : ''}
     </div>
   );
 }

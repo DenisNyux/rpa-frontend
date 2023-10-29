@@ -4,7 +4,7 @@ import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/Round
 
 async function Structure() {
   return (
-    <div className="mt-6 mb-12 mx-36">
+    <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <BackButton href="/" text="На главную" />
       <h2 className="mt-6 mb-6">Структура РПА</h2>
       <div className="flex align-center justify-center my-4">
