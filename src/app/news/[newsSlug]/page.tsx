@@ -20,7 +20,7 @@ async function SingleNewsPage({ params }: SingleNewsPageProps) {
 
     console.log(exactNews)
   return (
-    <div className="mt-6 mb-12 mx-36 flex flex-col">
+    <div className="my-8 mx-16 lg:mx-6 lg:my-8 flex flex-col">
       <Link href={`/news`} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
       <span className={`mt-6 ${styles.newsSingleOnPage__rubrick}`}>{exactNews.rubrick.data.attributes.rubTitle}</span>
       <h2 className='mt-2'>{exactNews.newsTitle}</h2>

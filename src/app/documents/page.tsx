@@ -9,7 +9,7 @@ async function Documents() {
   const documentCategories = await documentsData;
 
   return (
-    <div className="mt-6 mb-12 mx-36">
+    <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <Link href={"/"} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
       {documentCategories.data.map((documentCategory, index) => {
         return (

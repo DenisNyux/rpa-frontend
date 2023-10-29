@@ -15,7 +15,7 @@ function DocumentSection({ docCategoryName, catDocs }: DocumentSectionProps) {
         headerTitle={docCategoryName}
         headerColor="#5e050d"
       />
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-1">
         {catDocs.map((doc, index) => (
           <DocumentCard mainDocument={doc.attributes.mainDocument.data} attachmentsDocuments={doc.attributes.documentAttachments.data} key={index} />
         ))}

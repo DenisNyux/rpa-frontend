@@ -14,7 +14,7 @@ async function News() {
   const rubrics = await newsRubrics;
 
   return (
-    <div className="mt-6 mb-12 mx-36">
+    <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <Link href={`/`} className=" text-[#5E050D] text-base leading-5">← На главную</Link>
       {/* <h2 className="mt-6">Новости РПА</h2> */}
       <div className="flex flex-col gap-6 mt-6">

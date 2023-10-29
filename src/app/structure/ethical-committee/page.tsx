@@ -4,6 +4,7 @@ import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/D
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
 import separateToParagraphs from "@/lib/separateToParagraphs";
+import replaceMarkdownLinks from "@/lib/replaceLinks";
 
 async function EthicalComittee() {
   const ecData: Promise<EhticalComitteeDataResponse> =
