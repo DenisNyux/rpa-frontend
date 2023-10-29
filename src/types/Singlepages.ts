@@ -19,8 +19,8 @@ export type AboutRpaTextResponse = {
   data: {
     id: number;
     attributes: {
-      about_rpa_text_after_buttons: string | null | undefined
-      about_rpa_text_before_buttons: string | null | undefined
+      aboutRpaTextAfterButtons: string | null | undefined
+      aboutRpaTextBeforeButtons: string | null | undefined
       createdAt: string
       updatedAt: string
       publishedAt: string
@@ -63,3 +63,89 @@ export type VisePresidentDataResponse = {
   meta: {};
 }
 
+export type CoordinationalComiteeDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      coordAdditionalText: string | null | undefined
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+
+
+export type SupervisorsCommitteeDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      supervisorsComAdditionalText: string | null | undefined
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+
+export type RevisionCommitteeDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      revisionAdditionalText: string | null | undefined
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+
+export type SupervisorsDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      supervisorsAdditionalText: string | null | undefined
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}
+
+
+export type EhticalComitteeDataResponse = {
+  data: {
+    id: number;
+    attributes: {
+      rpaMembers: {
+        data: MemberType[]
+      }
+      ethicalAdditionalText: string | null | undefined
+      createdAt: string
+      updatedAt: string
+      publishedAt: string
+      locale: string
+    };
+  };
+  meta: {};
+}

@@ -6,7 +6,7 @@ type LineSeparatedHeaderProps = {
 function LineSeparatedHeader({headerColor, headerTitle, className}: LineSeparatedHeaderProps) {
   return (
     <div className={`${className ? className : ''} flex flex-col gap-5 mb-5`}>
-        <h4 style={{color: headerColor}} className="font-bold	">{headerTitle}</h4>
+        <h4 style={{color: headerColor}} className="font-bold	lg:text-xl">{headerTitle}</h4>
         <hr />
     </div>
   )

@@ -15,16 +15,15 @@ async function AboutRpa() {
       <BackButton href="/" text="На главную"/>
       <h2 className="mt-6 mb-3">РПА</h2>
       <div className="flex flex-col gap-3">
-        <span className="text-sm flex flex-col gap-3">
- 
-            {separateToParagraphs(aboutText.data.attributes.about_rpa_text_before_buttons)}
+        <span className="text-base flex flex-col gap-3">
+            {separateToParagraphs(aboutText.data.attributes.aboutRpaTextBeforeButtons)}
         </span>
         <div className="flex w-100 gap-4 items-center my-8">
           <RoundSquareLink linkTitle="Структура" url="/structure" />
           <RoundSquareLink linkTitle="Реквизиты" url="/requisites" />
         </div>
-        <span className="text-sm flex flex-col gap-3">
-        {separateToParagraphs(aboutText.data.attributes.about_rpa_text_after_buttons)}
+        <span className="text-base flex flex-col gap-3">
+        {separateToParagraphs(aboutText.data.attributes.aboutRpaTextAfterButtons)}
 
         </span>
       </div>

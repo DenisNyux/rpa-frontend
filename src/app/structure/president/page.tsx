@@ -76,7 +76,7 @@ async function PresidentPage() {
             headerTitle="Краткая биография"
             headerColor="black"
           />
-          <span className="flex flex-col gap-3 text-xl">{separateToParagraphs(additionalText)}</span>
+          <span className="flex flex-col gap-3 text-base">{separateToParagraphs(additionalText)}</span>
         </div>
         
       ) : (

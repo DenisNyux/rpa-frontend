@@ -13,7 +13,7 @@ async function VisePresidents() {
     <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <BackButton href="/structure" text="К структуре" />
       <h2 className="mt-6 mb-6">Вице-президенты РПА</h2>
-      <DepartmentMembers membersArr={presidentContent.data.attributes.rpaMembers.data} depSlug="vise-president" isDepartment={false}></DepartmentMembers>
+      <DepartmentMembers membersArr={presidentContent.data.attributes.rpaMembers.data} depSlug="structure/vise-president" isDepartment={false}></DepartmentMembers>
     </div>
   );
 }
