@@ -22,7 +22,7 @@ function DepartmentMembers({membersArr, depSlug, isDepartment}: DepartmentMember
             memJob={member.attributes.workPlace}
             memContacts={member.attributes.contact}
             depSlug={depSlug}
-            memImage={getFullImageUrl(member.attributes.avatar.data.attributes.url, "/member.svg")}
+            memImage={getFullImageUrl(member.attributes.avatar.data?.attributes.url, "/member.svg")}
             memSlug={member.attributes.slug}
             key={idx}
             isDepartment={isDepartment}
