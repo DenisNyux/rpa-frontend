@@ -14,12 +14,6 @@ async function ApplyForMembership() {
       <Link href={`/`} className=" text-[#5E050D] text-base leading-5">← На главную</Link>
       <h2 className="mt-6">Здесь вы можете заполнить форму для того чтобы попасть на сайт РПА</h2>
       <ApplicationForm departments={departmentsObj}/>
-
-      {/* <form className="flex flex-col my-6">
-        <label htmlFor="name" className="text-base leading-5">ФИО</label>
-        <input type="text" id="name"></input>
-
-      </form> */}
     </div>
   )
 }

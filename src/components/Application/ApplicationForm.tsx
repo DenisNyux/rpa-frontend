@@ -10,27 +10,27 @@ type ApplicationFormProps = {
 };
 
 type FormType = {
-  name: string | null;
-  contacts: string | null;
-  otdelenie: number | null;
-  education: string | null;
-  spec: string | null;
-  degree: string | null;
-  workPlace: string | null;
-  psychotherapyType: string | null;
+  name: string;
+  contacts: string;
+  otdelenie: number;
+  education: string;
+  spec: string;
+  degree: string;
+  workPlace: string;
+  psychotherapyType: string;
   imageFile: FileList | null;
 };
 
 function ApplicationForm({ departments }: ApplicationFormProps) {
   const [formData, setFormData] = useState<FormType>({
-    name: null,
-    contacts: null,
-    otdelenie: null,
-    education: null,
-    spec: null,
-    degree: null,
-    workPlace: null,
-    psychotherapyType: null,
+    name: '',
+    contacts: '',
+    otdelenie: 0,
+    education: '',
+    spec: '',
+    degree: '',
+    workPlace: '',
+    psychotherapyType: '',
     imageFile: null,
   });
 
@@ -50,7 +50,7 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
         3,
         'Минимум 3 символа. Если вы не хотите указывать личные данные напишите "Нет"'
       ),
-    otdelenie: z.number({ required_error: "Поле обязательно для заполнения" }),
+    otdelenie: z.number({ required_error: "Поле обязательно для заполнения" }).gt(0, 'Выберите отделение'),
     education: z
       .string({ required_error: "Поле обязательно для заполнения" })
       .min(
@@ -72,8 +72,7 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
     psychotherapyType: z
       .string({ required_error: "Поле обязательно для заполнения" })
       .min(3, "Минимум 3 символа"),
-    imageFile: z.instanceof(FileList),
-  });
+  }).required();
 
   // console.log(formData);
   return (

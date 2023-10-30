@@ -48,7 +48,7 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
         />
       )}
 
-      {memberArr.length > 0 ? <> <LineSeparatedHeader headerTitle="Члены отделения" headerColor="rgba(0, 0, 0, 0.50)" ></LineSeparatedHeader><DepartmentMembers membersArr={sortedMembers} depSlug={params.depSlug} isDepartment={true}/></> : ''}
+      {memberArr.length > 0 ? <> <LineSeparatedHeader headerTitle="Члены отделения" headerColor="rgba(0, 0, 0, 0.50)" className="mt-6" ></LineSeparatedHeader><DepartmentMembers membersArr={sortedMembers} depSlug={params.depSlug} isDepartment={true}/></> : ''}
     </div>
   );
 }
