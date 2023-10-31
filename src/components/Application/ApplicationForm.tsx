@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { z } from "zod";
+import { z, ZodFormattedError } from "zod";
 import { DepartmentsData } from "@/types/DepartmentsType";
 import styles from "./ApplicationForm.module.css";
 import { type } from "os";
@@ -18,63 +18,95 @@ type FormType = {
   degree: string;
   workPlace: string;
   psychotherapyType: string;
-  imageFile: FileList | null;
 };
 
 function ApplicationForm({ departments }: ApplicationFormProps) {
   const [formData, setFormData] = useState<FormType>({
-    name: '',
-    contacts: '',
+    name: "",
+    contacts: "",
     otdelenie: 0,
-    education: '',
-    spec: '',
-    degree: '',
-    workPlace: '',
-    psychotherapyType: '',
-    imageFile: null,
+    education: "",
+    spec: "",
+    degree: "",
+    workPlace: "",
+    psychotherapyType: "",
   });
 
-  const formSchema = z.object({
-    name: z
-      .string({
-        required_error: "Поле обязательно для заполнения",
-        invalid_type_error: "Неверный формат",
-      })
-      .min(3, "Минимум 3 символа"),
-    contacts: z
-      .string({
-        required_error: "Поле обязательно для заполнения",
-        invalid_type_error: "Неверный формат",
-      })
-      .min(
-        3,
-        'Минимум 3 символа. Если вы не хотите указывать личные данные напишите "Нет"'
-      ),
-    otdelenie: z.number({ required_error: "Поле обязательно для заполнения" }).gt(0, 'Выберите отделение'),
-    education: z
-      .string({ required_error: "Поле обязательно для заполнения" })
-      .min(
-        5,
-        'Минимум 5 символов. Если вы не хотите указывать данные об образовании напишите "Высшее"'
-      ),
-    spec: z
-      .string({ required_error: "Поле обязательно для заполнения" })
-      .min(3, "Минимум 3 символа"),
-    degree: z
-      .string({ required_error: "Поле обязательно для заполнения" })
-      .min(
-        3,
-        'Минимум 3 символа. Если у вас нет ученой степени напишите "Нет"'
-      ),
-    workPlace: z
-      .string({ required_error: "Поле обязательно для заполнения" })
-      .min(3, "Минимум 5 символов"),
-    psychotherapyType: z
-      .string({ required_error: "Поле обязательно для заполнения" })
-      .min(3, "Минимум 3 символа"),
-  }).required();
+  const [errorList, setErrorList] =
+    useState<ZodFormattedError<FormType> | null>(null);
 
-  // console.log(formData);
+  const [uploadedImage, setUploadedImage] = useState<any>(null);
+
+  const formSchema = z
+    .object({
+      name: z
+        .string({
+          required_error: "Поле обязательно для заполнения",
+          invalid_type_error: "Неверный формат",
+        })
+        .min(3, "Минимум 3 символа"),
+      contacts: z
+        .string({
+          required_error: "Поле обязательно для заполнения",
+          invalid_type_error: "Неверный формат",
+        })
+        .min(
+          3,
+          'Минимум 3 символа. Если вы не хотите указывать личные данные напишите "Нет"'
+        ),
+      otdelenie: z
+        .number({ required_error: "Поле обязательно для заполнения" })
+        .gt(0, "Выберите отделение"),
+      education: z
+        .string({ required_error: "Поле обязательно для заполнения" })
+        .min(
+          5,
+          'Минимум 5 символов. Если вы не хотите указывать данные об образовании напишите "Высшее"'
+        ),
+      spec: z
+        .string({ required_error: "Поле обязательно для заполнения" })
+        .min(3, "Минимум 3 символа"),
+      degree: z
+        .string({ required_error: "Поле обязательно для заполнения" })
+        .min(
+          3,
+          'Минимум 3 символа. Если у вас нет ученой степени напишите "Нет"'
+        ),
+      workPlace: z
+        .string({ required_error: "Поле обязательно для заполнения" })
+        .min(3, "Минимум 5 символов"),
+      psychotherapyType: z
+        .string({ required_error: "Поле обязательно для заполнения" })
+        .min(3, "Минимум 3 символа"),
+    })
+    .required();
+
+  const sendImage = async () => {
+
+    if (!uploadedImage) {
+      return;
+    }
+
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `bearer ${process.env.API_TOKEN}`);
+
+    const formdata = new FormData();
+    formdata.append("files", uploadedImage);
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+    };
+
+    const response = await fetch(`/api/upload`, requestOptions)
+      .then((response) => response.json())
+      // .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    return response;
+  };
+  // console.log(errorList);
   return (
     <form
       className={`flex flex-col my-6 mt-6 mb-12 mx-36 ${styles.applicationForm}`}
@@ -91,6 +123,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.name?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="contacts">Профессиональные контакты</label>
@@ -104,6 +141,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.contacts?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="department">Отделение</label>
@@ -120,6 +162,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             </option>
           ))}
         </select>
+        <span className="text-red-500">
+          {errorList?.otdelenie?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="education">Образование</label>
@@ -133,6 +180,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.education?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="spec">Специальность</label>
@@ -146,6 +198,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.spec?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="degree">Ученая степень, если есть</label>
@@ -159,6 +216,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.degree?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="workPlace">Место работы</label>
@@ -172,6 +234,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.workPlace?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="psychotherapyType">Тип психотерапии</label>
@@ -185,6 +252,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
             })
           }
         />
+        <span className="text-red-500">
+          {errorList?.psychotherapyType?._errors?.map((error) => (
+            <p key={error}>{error}</p>
+          ))}
+        </span>
       </div>
       <div>
         <label htmlFor="image">Фотография для сайта</label>
@@ -192,8 +264,11 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
           type="file"
           id="image"
           accept=".png, .jpg, .jpeg, .gif, .webp, .bmp, .heic, .svg"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-            setFormData({ ...formData, imageFile: e.target.files });
+          // onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+          //   setUploadedImage(e.target.files[0]);
+          // }}
+          onChange={(e: any): void => {
+            setUploadedImage(e.target.files[0]);
           }}
         />
       </div>
@@ -201,8 +276,12 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          console.log(formData);
-          console.log(formSchema.safeParse(formData));
+          const sas = sendImage();
+          console.log(sas)
+          const validationResult = formSchema.safeParse(formData);
+          if (!validationResult.success) {
+            setErrorList(validationResult.error.format());
+          }
         }}
       >
         Отправить

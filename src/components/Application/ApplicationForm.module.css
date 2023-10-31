@@ -27,6 +27,18 @@
     border-radius: 5px;  
 }
 
+.applicationForm > div input[type="file"]::file-selector-button {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    display: flex;
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: var(--logo-color);
+}
+
 .applicationForm button {
     padding: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.20);

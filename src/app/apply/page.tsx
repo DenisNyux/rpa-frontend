@@ -13,7 +13,7 @@ async function ApplyForMembership() {
     <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <Link href={`/`} className=" text-[#5E050D] text-base leading-5">← На главную</Link>
       <h2 className="mt-6">Здесь вы можете заполнить форму для того чтобы попасть на сайт РПА</h2>
-      <ApplicationForm departments={departmentsObj}/>
+      {/* <ApplicationForm departments={departmentsObj}/> */}
     </div>
   )
 }

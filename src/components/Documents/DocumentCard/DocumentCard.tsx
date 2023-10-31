@@ -15,6 +15,7 @@ function DocumentCard({
 }: DocumentCardProps) {
   const mainDocumentTitle = mainDocument.attributes.name;
 
+  console.log(mainDocument)
   const attachmentsSection = (attachmentArray: MediaType[]) => {
     return attachmentArray.map((attachment, index) => {
       return (
@@ -30,7 +31,7 @@ function DocumentCard({
     });
   };
 
-  console.log(attachmentsDocuments);
+  
   return (
     <div className={styles.documentCard}>
       <div className={styles.documentCard__mainDocument}>

@@ -9,6 +9,7 @@ export type SingleNews = {
     updatedAt: string;
     publishedAt: string;
     newsSlug: string;
+    pubDate: string;
     rubrick: {
       data: Rubrick;
     };
@@ -21,9 +22,9 @@ export type SingleNews = {
 export type Rubrick = {
   id: 1;
   attributes: {
-    rubTitle: "Новости РПА";
-    createdAt: "2023-08-03T14:36:49.096Z";
-    updatedAt: "2023-08-03T14:36:50.809Z";
+    rubTitle: string;
+    createdAt: string;
+    updatedAt: string;
   };
 };
 
