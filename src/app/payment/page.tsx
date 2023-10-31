@@ -16,7 +16,7 @@ async function Payment() {
       <h2 className="mt-6 mb-6">Оплатить членский взнос</h2>
       <span className="text-base flex flex-col gap-3 lg:text-xl">
         На данной странице вы можете оплатить членский взнос. Вам необходимо
-        указать сумму платежа в рублях. 
+        указать сумму платежа в рублях. Сумма разового вступительного взноса - 1 000 рублей. Сумма ежегодного членского взноса – 2 000 рублей.
       </span>
       <span className="text-base flex flex-col gap-3 pt-6 lg:text-xl">
         <p>Из <a className="text-[#5e050d]" href={`${process.env.API_URL}/uploads/Ustav_RPA_5bb09f0cf5.pdf`}>устава</a> РПА</p>
