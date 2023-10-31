@@ -9,7 +9,7 @@ async function getSingleEvent(eventSlug: string) {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    next: { revalidate: 0 }
+    next: { revalidate: 3600 }
   };
 
   const response = await fetch(`${process.env.API_URL}/api/meropriyatiyas?populate=eventMedia&filters[eventSlug][$eq]=${eventSlug}`, requestOptions)
