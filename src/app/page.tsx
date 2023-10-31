@@ -21,12 +21,12 @@ export default async function Home() {
     },
     {
       title: "Вступить в РПА",
-      href: "/",
+      href: "/join",
       image: "/join.svg",
     },
     {
       title: "Мероприятия",
-      href: "/",
+      href: "/events",
       image: "/calendar.svg",
     },
   ];
