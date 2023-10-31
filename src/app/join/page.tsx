@@ -9,7 +9,7 @@ async function Join() {
       <BackButton href="/" text="На главную" />
       <h2 className="mt-6 mb-6"></h2>
       <span className="text-base flex flex-col gap-3 lg:text-xl">
-        На этой странице вы можете заполнить форму для того чтобы попасть в РПА, здесь также представлена форма для членов РПА, желающих оказаться на сайте в разделе "Члены РПА"
+        {'На этой странице вы можете заполнить форму для того чтобы попасть в РПА, здесь также представлена форма для членов РПА, желающих оказаться на сайте в разделе "Члены РПА"'}
       </span>
         <div className="mt-6 grid grid-cols-2 gap-6">
           <RoundSquareLink linkTitle="Заполнить форму для вступления в РПА" url="https://forms.gle/bJ34fseY8NN6SiLM9" />
