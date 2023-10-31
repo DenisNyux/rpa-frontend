@@ -6,7 +6,7 @@ async function getVisePresidents() {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    next: { revalidate: 0 }
+    next: { revalidate: 3600 }
   };
 
   const response = await fetch(

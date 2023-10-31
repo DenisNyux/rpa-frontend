@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./RoundSquareLink.module.css";
 
 type RoundSquareLinkProps = {
-  linkTitle: string;
+  linkTitle: string | string[]; 
   url: string;
   className?: string;
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -14,8 +15,9 @@ function Footer() {
       </div>
       <span>Российская психотерапевтическая ассоциация, {new Date().getFullYear()}</span>
         <span className="flex gap-2 pb-10">
-        <a className="text-[#5e050d]">Лицензия</a>
-        <a className="text-[#5e050d]">Политика конфиденциальности</a>
+        <Link href={'/codex'} className="text-[#5e050d]">Устав</Link>
+        {/* <a className="text-[#5e050d]">Политика конфиденциальности</a> */}
+        <Link href={'/oferta'} className="text-[#5e050d]">Договор публичной оферты</Link>
         </span>
 
     </div>
