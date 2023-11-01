@@ -1,5 +1,5 @@
 export default function separateToParagraphs(
-  sourceString: string | null | undefined
+  sourceString: string | null | undefined 
 ) {
   if (sourceString) {
     const regex = /\[(.*?)\]\((.*?)\)/g;
@@ -23,7 +23,7 @@ export default function separateToParagraphs(
 
         // Add the JSX for the link
         elements.push(
-          <a key={index} href={linkUrl} className="underline text-[#5e050d]">
+          <a key={index} href={linkUrl} className="underline text-bold decoration-solid	text-[#5e050d]">
             {linkText}
           </a>
         );

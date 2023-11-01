@@ -1,6 +1,6 @@
 .newsSingleOnPage__rubrick {
     color: #BA9E30;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    font-size: 1rem;
 }
 
 .newsSingleOnPage__newsTitle {
@@ -19,6 +20,6 @@
 }
 
 .newsSingleOnPage__readMore{
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--logo-color);
 }
