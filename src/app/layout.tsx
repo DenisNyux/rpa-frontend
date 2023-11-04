@@ -14,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>РПА</title>
+      </head>
       <body className={ralewayFont.className}>
         <Header />
         {children}
