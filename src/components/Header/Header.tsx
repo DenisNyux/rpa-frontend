@@ -88,6 +88,13 @@ function Header() {
           href: "/codex",
           submenu: null,
         },
+        {
+          id: "0-3",
+          label: "Этический кодекс",
+          name: "ethical-codex",
+          href: "/ethical-codex",
+          submenu: null,
+        }
       ],
     },
     {

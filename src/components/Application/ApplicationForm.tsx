@@ -7,6 +7,8 @@ import { type } from "os";
 
 type ApplicationFormProps = {
   departments: DepartmentsData;
+  apiUrl: string;
+  apiToken: string;
 };
 
 type FormType = {
@@ -20,7 +22,7 @@ type FormType = {
   psychotherapyType: string;
 };
 
-function ApplicationForm({ departments }: ApplicationFormProps) {
+function ApplicationForm({ departments, apiUrl, apiToken }: ApplicationFormProps) {
   const [formData, setFormData] = useState<FormType>({
     name: "",
     contacts: "",
@@ -88,10 +90,9 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
     }
 
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", `bearer ${process.env.API_TOKEN}`);
+    myHeaders.append("Authorization", `bearer ${apiToken}`);
 
-    const formdata = new FormData();
-    formdata.append("files", uploadedImage);
+    const formdata = new FormData(uploadedImage);
 
     const requestOptions = {
       method: "POST",
@@ -99,7 +100,7 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
       body: formdata,
     };
 
-    const response = await fetch(`/api/upload`, requestOptions)
+    const response = await fetch(`${apiUrl}/api/upload`, requestOptions)
       .then((response) => response.json())
       // .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -268,7 +269,7 @@ function ApplicationForm({ departments }: ApplicationFormProps) {
           //   setUploadedImage(e.target.files[0]);
           // }}
           onChange={(e: any): void => {
-            setUploadedImage(e.target.files[0]);
+            setUploadedImage(e.target);
           }}
         />
       </div>
