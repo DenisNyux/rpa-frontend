@@ -9,7 +9,7 @@ async function getDepartment(departmentSlug: string) {
     const requestOptions = {
       method: "GET",
       headers: myHeaders,
-      next: { revalidate: 3600 }
+      next: { revalidate: 60 }
     };
   
     const response = await fetch(`${process.env.API_URL}/api/departments/?populate[headOfDep][populate][0]=avatar&populate[members][populate][0]=avatar&filters[slug][$eq]=${departmentSlug}`, requestOptions)
