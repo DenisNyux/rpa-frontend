@@ -60,8 +60,6 @@ function PaymentForm({ merchantId, merchantPassword }: PaymentFormProps) {
     }
   };
 
-  resultLink ? console.log("resultLink", resultLink) : null;
-
   useEffect(() => {
     const validationResult = formSchema.safeParse(formData);
     if (!validationResult.success) {
@@ -79,7 +77,6 @@ function PaymentForm({ merchantId, merchantPassword }: PaymentFormProps) {
     }
   }, [formData]);
 
-  console.log(resultLink);
   return (
     <div className="flex justify-center my-20">
       <form

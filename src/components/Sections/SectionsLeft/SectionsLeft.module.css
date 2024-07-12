@@ -1,0 +1,9 @@
+.sectionsLeft {
+    width: 70%;
+}
+
+@media screen and (max-width: 768px) { 
+    .sectionsLeft {
+        width: 100%;
+    }
+}

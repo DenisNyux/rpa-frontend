@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 import { EventsType} from '@/types/EventsType';
-import getSingleEvent from '@/api/events/getSingleEvent';
+import getSingleEvent from '@/requests/events/getSingleEvent';
 
 import separateToParagraphs from '@/lib/separateToParagraphs';
 
@@ -18,7 +18,6 @@ async function SingleEvent({ params }: SingleEventPageProps) {
     const singleEvent = await singleEventData;
     const exactEvent = singleEvent.data[0].attributes
 
-    console.log(exactEvent)
     
   return (
     <div className="my-8 mx-16 lg:mx-6 lg:my-8 flex flex-col">

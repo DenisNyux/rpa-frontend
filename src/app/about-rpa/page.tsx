@@ -1,5 +1,5 @@
 import Link from "next/link";
-import getAboutRpaText from "@/api/singlePages/getAboutRpaText";
+import getAboutRpaText from "@/requests/singlePages/getAboutRpaText";
 import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/RoundSquareLink";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";
 

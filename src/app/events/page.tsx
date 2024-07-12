@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import getAllEvents from "@/api/events/getAllEvents";
+import getAllEvents from "@/requests/events/getAllEvents";
 import { EventsType } from "@/types/EventsType";
 import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/RoundSquareLink";
 

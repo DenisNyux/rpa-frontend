@@ -20,7 +20,7 @@ export type SingleNews = {
 };
 
 export type Rubrick = {
-  id: 1;
+  id: number;
   attributes: {
     rubTitle: string;
     createdAt: string;

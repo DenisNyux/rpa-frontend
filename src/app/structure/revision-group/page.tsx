@@ -1,4 +1,4 @@
-import getRevisionGroup from "@/api/singlePages/getRevisionGroup";
+import getRevisionGroup from "@/requests/singlePages/getRevisionGroup";
 import { RevisionCommitteeDataResponse } from "@/types/Singlepages";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";

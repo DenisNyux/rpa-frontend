@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import getHomepageText from "@/api/singlePages/getHomepageText";
+import getHomepageText from "@/requests/singlePages/getHomepageText";
 
 import { HomepageTextResponse } from "@/types/Singlepages";
 

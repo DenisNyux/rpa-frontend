@@ -1,0 +1,30 @@
+.rootModal {
+    width: 40rem;
+}
+
+.formControl, .submitButton {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.rootModal input[type="text"], .rootModal select {
+    height: 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+}
+
+.rootModal textarea {
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .rootModal {
+        width: 25rem;
+    }
+}

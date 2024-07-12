@@ -1,7 +1,7 @@
 import Link from "next/link"
 
-import getAllNews from "@/api/news/getAllNews";
-import getAllRubrics from "@/api/news/getAllRubrics";
+import getAllNews from "@/requests/news/getAllNews";
+import getAllRubrics from "@/requests/news/getAllRubrics";
 import { NewsType, RubricsType } from "@/types/NewsType";
 
 import NewsSingleOnPage  from "@/components/News/NewsSingleOnPage/NewsSingleOnPage";

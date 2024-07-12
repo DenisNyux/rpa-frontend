@@ -1,6 +1,6 @@
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";
 import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/RoundSquareLink";
-import getAllOtherDocuments from "@/api/documents/getAllOtherDocuments";
+import getAllOtherDocuments from "@/requests/documents/getAllOtherDocuments";
 import { DocumentCategories } from "@/types/DocumentsType";
 import removeExtension from "@/lib/removeExtension";
 import PaymentForm from "@/components/Payment/PaymentForm";

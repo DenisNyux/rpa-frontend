@@ -1,4 +1,4 @@
-import getEthicalComittee from "@/api/singlePages/getEthicalComittee";
+import getEthicalComittee from "@/requests/singlePages/getEthicalComittee";
 import { EhticalComitteeDataResponse } from "@/types/Singlepages";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";

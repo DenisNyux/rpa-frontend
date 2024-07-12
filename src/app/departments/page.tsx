@@ -1,7 +1,7 @@
 import React from "react";
 
 import DepartmentCard from "@/components/Department/DepartmentCard/DepartmentCard";
-import getAllDepartments from "@/api/departments/getAllDepartments";
+import getAllDepartments from "@/requests/departments/getAllDepartments";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";
 
 import Link from "next/link";

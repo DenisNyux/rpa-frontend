@@ -15,7 +15,6 @@ function DocumentCard({
 }: DocumentCardProps) {
   const mainDocumentTitle = mainDocument.attributes.name;
 
-  console.log(mainDocument)
   const attachmentsSection = (attachmentArray: MediaType[]) => {
     return attachmentArray.map((attachment, index) => {
       return (
@@ -24,7 +23,7 @@ function DocumentCard({
         <div key={index} className={styles.documentCard__attachment}>
           <span>{removeExtension(attachment.attributes.name)}</span>
           <Link href={`${process.env.API_URL}${attachment.attributes.url}`}>
-            <Image src="./download.svg" alt="download button" height={24} width={24}/>
+            <Image src="/download.svg" alt="download button" height={24} width={24}/>
           </Link>
         </div>
       </div>);
@@ -37,7 +36,7 @@ function DocumentCard({
       <div className={styles.documentCard__mainDocument}>
         <span>{removeExtension(mainDocumentTitle)}</span>
         <Link href={`${process.env.API_URL}${mainDocument.attributes.url}`}>
-          <Image src="./download.svg" alt="download button" height={24} width={24}/>
+          <Image src="/download.svg" alt="download button" height={24} width={24}/>
         </Link>
       </div>
       {attachmentsDocuments ? <div className="flex flex-col gap-3 py-3">{attachmentsSection(attachmentsDocuments)}</div> : ""}

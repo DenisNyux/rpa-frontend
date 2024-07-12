@@ -1,4 +1,4 @@
-import getMember from "@/api/departments/getMember";
+import getMember from "@/requests/departments/getMember";
 import { MemberType } from "@/types/MemberType";
 import Link from "next/link";
 import getFullImageUrl from "@/lib/getFullImageUrl";
@@ -22,7 +22,6 @@ async function MemberPage({ params }: MemberPageProps) {
   const memberObj = await memberData;
   const member = memberObj.data[0].attributes;
 
-  console.log(member)
   
   return <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
     

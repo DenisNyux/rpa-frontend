@@ -1,4 +1,4 @@
-async function getAllDocumentsByCategory() {
+async function getAllSections() {
     const myHeaders = new Headers();
   
     myHeaders.append(
@@ -12,12 +12,12 @@ async function getAllDocumentsByCategory() {
       next: { revalidate: 0 }
     };
   
-    const response = await fetch(`${process.env.API_URL}/api/catdocuments?populate[relatedDocs][populate][0]=mainDocument, documentAttachments`, requestOptions)
+    const response = await fetch(`${process.env.API_URL}/api/sections`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
   
     return response
   }
   
-  export default getAllDocumentsByCategory;
+  export default getAllSections;
   

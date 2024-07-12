@@ -1,4 +1,4 @@
-import getSupervisorsComittee from "@/api/singlePages/getSupervisorsComittee";
+import getSupervisorsComittee from "@/requests/singlePages/getSupervisorsComittee";
 import { SupervisorsCommitteeDataResponse } from "@/types/Singlepages";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";

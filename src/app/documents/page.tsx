@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { DocumentCategories } from "@/types/DocumentsType";
-import getAllDocumentsByCategory from "@/api/documents/getAllDocumentsByCategory";
+import getAllDocumentsByCategory from "@/requests/documents/getAllDocumentsByCategory";
 import DocumentSection from "@/components/Documents/DocumentSection/DocumentSection";
 
 async function Documents() {

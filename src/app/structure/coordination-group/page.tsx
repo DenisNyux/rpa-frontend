@@ -1,4 +1,4 @@
-import getCoordinationalGroup from "@/api/singlePages/getCoordinationalGroup";
+import getCoordinationalGroup from "@/requests/singlePages/getCoordinationalGroup";
 import { CoordinationalComiteeDataResponse } from "@/types/Singlepages";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";

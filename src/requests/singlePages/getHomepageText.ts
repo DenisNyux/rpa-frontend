@@ -6,7 +6,7 @@ async function getHomepageText() {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    next: { revalidate: 3600 }
+    next: { revalidate: 60 }
   };
 
   const response = await fetch(

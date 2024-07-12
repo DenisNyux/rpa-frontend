@@ -1,4 +1,4 @@
-import getSupervisors from "@/api/singlePages/getSupervisors";
+import getSupervisors from "@/requests/singlePages/getSupervisors";
 import { SupervisorsDataResponse } from "@/types/Singlepages";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import BackButton from "@/components/SharedComponents/BackButton/BackButton";

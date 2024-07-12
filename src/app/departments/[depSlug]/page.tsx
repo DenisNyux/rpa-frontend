@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { DepartmentData } from "@/types/DepartmentsType";
-import getDepartment from "@/api/departments/getDepartment";
+import getDepartment from "@/requests/departments/getDepartment";
 import DepartmentHead from "@/components/Department/DepartmentMembers/DepartmentHead/DepartmentHead";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
@@ -30,7 +30,6 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
     return a.attributes.name.localeCompare(b.attributes.name);
   })
 
-  console.log(memberArr.length)
   return (
     <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
       <Link href={"/departments"} className=" text-[#5E050D] text-base leading-5">← Назад</Link>

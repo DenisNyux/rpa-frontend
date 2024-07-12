@@ -1,5 +1,5 @@
 import Image from "next/image";
-import getPresident from "@/api/singlePages/getPresident";
+import getPresident from "@/requests/singlePages/getPresident";
 import { PresidentDataResponse } from "@/types/Singlepages";
 import styles from "./presidentPage.module.css";
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
@@ -18,7 +18,6 @@ async function PresidentPage() {
   const additionalText =
     presidentContent.data.attributes.presidentAdditionalText;
   
-    console.log(additionalText)
 
   return (
     <div className="my-8 mx-16 lg:mx-6 lg:my-8">

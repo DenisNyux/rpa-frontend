@@ -4,11 +4,10 @@ import { DocumentObjectType } from "@/types/DocumentsType";
 
 type DocumentSectionProps = {
   docCategoryName: string;
-  catDocs: DocumentObjectType[] 
+  catDocs: DocumentObjectType[];
 };
 
 function DocumentSection({ docCategoryName, catDocs }: DocumentSectionProps) {
-    console.log(catDocs)
   return (
     <div className="my-6 ">
       <LineSeparatedHeader
@@ -17,7 +16,11 @@ function DocumentSection({ docCategoryName, catDocs }: DocumentSectionProps) {
       />
       <div className="grid grid-cols-2 gap-6 md:grid-cols-1">
         {catDocs.map((doc, index) => (
-          <DocumentCard mainDocument={doc.attributes.mainDocument.data} attachmentsDocuments={doc.attributes.documentAttachments.data} key={index} />
+          <DocumentCard
+            mainDocument={doc.attributes.mainDocument.data}
+            attachmentsDocuments={doc.attributes.documentAttachments.data}
+            key={index}
+          />
         ))}
       </div>
     </div>
