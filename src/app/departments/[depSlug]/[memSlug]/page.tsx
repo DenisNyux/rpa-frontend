@@ -4,6 +4,7 @@ import Link from "next/link";
 import getFullImageUrl from "@/lib/getFullImageUrl";
 import styles from './membersPage.module.css'
 import Image from "next/image";
+import separateToParagraphs from "@/lib/separateToParagraphs";
 
 type MemberPageProps = {
   params: {
@@ -21,7 +22,6 @@ async function MemberPage({ params }: MemberPageProps) {
   const memberData: Promise<MemberResponse> = getMember(params.memSlug);
   const memberObj = await memberData;
   const member = memberObj.data[0].attributes;
-
   
   return <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
     
@@ -42,30 +42,30 @@ async function MemberPage({ params }: MemberPageProps) {
       <div className={`col-span-3 flex flex-col ${styles.memberText} gap-5 lg:col-span-2 sm:col-span-1`}>
       <span>
           <p>Место работы:</p>
-          <p>{member.workPlace}</p>
+          {separateToParagraphs(member.workPlace)}
         </span>
         <span>
           <p>Профессиональные контакты:</p>
-          <p>{member.contact}</p>
+          {separateToParagraphs(member.contact)}
         </span>
         <span>
           <p>Образование:</p>
-          <p>{member.education}</p>
+          {separateToParagraphs(member.education)}
         </span>
         
         <span>
           <p>Специализация:</p>
-          <p>{member.specialization}</p>
+          {separateToParagraphs(member.specialization)}
         </span>
 
         <span>
           <p>Ученая степень:</p>
-          <p>{member.degree}</p>
+          {separateToParagraphs(member.degree)}
         </span>
 
         <span>
           <p>Направление(я) психотерапии:</p>
-          <p>{member.therapyType}</p>
+          {separateToParagraphs(member.therapyType)}
         </span>
       </div>
     </div>
