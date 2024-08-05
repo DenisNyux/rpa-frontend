@@ -22,6 +22,8 @@ async function SingleSectionPage({ params }: SingleSectionPageProps) {
   );
   const singleSection = (await singleSectionData)?.data[0]?.attributes;
 
+  console.log(singleSection.sectionCoordinator)
+
   return (
     <div className="my-8 mx-16 lg:mx-6 lg:my-8">
       <Link href={`/sections`} className=" text-[#5E050D] text-base leading-5">
@@ -39,6 +41,7 @@ async function SingleSectionPage({ params }: SingleSectionPageProps) {
               <SectionsRight
                 sectionHead={singleSection.sectionHead}
                 sectionLogo={singleSection.sectionLogo}
+                sectionCoordinator={singleSection.sectionCoordinator}
                 sectionMembers={singleSection.sectionMembers}
                 sectionSlug={singleSection.sectionSlug}
                 sectionContacts={singleSection.sectionContacts}

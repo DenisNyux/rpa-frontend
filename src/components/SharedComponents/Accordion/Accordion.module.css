@@ -1,0 +1,11 @@
+.accContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.accHeader {
+    display: flex;
+    justify-content: space-between;
+}

@@ -10,6 +10,7 @@ export type SingleSection = {
     sectionDescription: BlocksContent | null;
     sectionHead: { data: MemberType };
     sectionMembers: { data: MemberType[] };
+    sectionCoordinator: { data: MemberType } | null;
     sectionDocuments: { data: MediaType[] };
     estDate: string;
     sectionContacts: string | null;

@@ -2,6 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 
 import OneLineMember from "@/components/SharedComponents/OneLineMember/OneLineMember";
+import Accordion from "@/components/SharedComponents/Accordion/Accordion";
 
 import { MediaType } from "@/types/DocumentsType";
 
@@ -17,6 +18,7 @@ type SectionsRightProps = {
   sectionHead: { data: MemberType } | null;
   sectionSlug: string;
   sectionMembers: { data: MemberType[] };
+  sectionCoordinator: { data: MemberType } | null;
 };
 
 const SectionsRight: FC<SectionsRightProps> = ({
@@ -26,8 +28,8 @@ const SectionsRight: FC<SectionsRightProps> = ({
   sectionHead,
   sectionSlug,
   sectionMembers,
+  sectionCoordinator,
 }) => {
-
   return (
     <div className={styles.sectionsRight}>
       <div className="mb-4">
@@ -51,7 +53,7 @@ const SectionsRight: FC<SectionsRightProps> = ({
       </div>
 
       {estDate && (
-        <div className="flex flex-row items-center gap-2 mb-4">
+        <div className="flex flex-row items-center gap-2 my-2">
           <h4 className="font-bold">Дата основания:</h4>
           <p className="font-bold text-base">
             {new Date(estDate).toLocaleDateString("ru-RU")}
@@ -59,21 +61,9 @@ const SectionsRight: FC<SectionsRightProps> = ({
         </div>
       )}
 
-      {sectionContacts && (
-        <div className="flex flex-row items-center gap-2 mb-4">
-          <h4 className="font-bold">Контакты:</h4>
-          <a
-            className="font-bold text-base text-[#5E050D]"
-            href={`mailto:${sectionContacts}`}
-          >
-            {sectionContacts}
-          </a>
-        </div>
-      )}
-
       {sectionHead && sectionHead.data && (
         <>
-          <h4 className="font-bold mb-2">Руководитель секции:</h4>
+          <h4 className="font-bold my-2">Руководитель секции:</h4>
           <OneLineMember
             name={sectionHead.data.attributes.name}
             avatarUrl={getFullImageUrl(
@@ -85,20 +75,48 @@ const SectionsRight: FC<SectionsRightProps> = ({
         </>
       )}
 
+      {sectionCoordinator && sectionCoordinator.data && (
+        <>
+          <h4 className="font-bold my-2">Координатор секции:</h4>
+          <OneLineMember
+            name={sectionCoordinator.data.attributes.name}
+            avatarUrl={getFullImageUrl(
+              sectionCoordinator.data.attributes.avatar.data.attributes.url,
+              "./member.svg"
+            )}
+            url={sectionSlug + "/" + sectionCoordinator?.data.attributes.slug}
+          />
+        </>
+      )}
+
+      {sectionContacts && (
+        <div className="flex flex-row items-center gap-2 my-2">
+          <h4 className="font-bold">Контакты:</h4>
+          <a
+            className="font-bold text-base text-[#5E050D]"
+            href={`mailto:${sectionContacts}`}
+          >
+            {sectionContacts}
+          </a>
+        </div>
+      )}
+
       {sectionMembers && sectionMembers.data.length > 0 && (
-        <div className="mt-4 flex flex-col gap-2">
-          <h4 className="font-bold">Члены секции:</h4>
-          {sectionMembers?.data.map((member) => (
-            <OneLineMember
-              key={member.id}
-              name={member.attributes.name}
-              avatarUrl={getFullImageUrl(
-                member.attributes.avatar.data.attributes.url,
-                "./member.svg"
-              )}
-              url={sectionSlug + "/" + member.attributes.slug}
-            />
-          ))}
+        <div className="my-2 flex flex-col gap-2">
+          {/* <h4 className="font-bold">Члены секции:</h4> */}
+          <Accordion title="Члены секции">
+            {sectionMembers?.data.map((member) => (
+              <OneLineMember
+                key={member.id}
+                name={member.attributes.name}
+                avatarUrl={getFullImageUrl(
+                  member.attributes.avatar.data.attributes.url,
+                  "./member.svg"
+                )}
+                url={sectionSlug + "/" + member.attributes.slug}
+              />
+            ))}
+          </Accordion>
         </div>
       )}
     </div>
