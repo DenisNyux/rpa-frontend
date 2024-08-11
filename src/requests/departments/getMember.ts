@@ -12,7 +12,7 @@ async function getMember(memberSlug: string) {
       next: { revalidate: 60 }
     };
   
-    const response = await fetch(`${process.env.API_URL}/api/members?populate=avatar&filters[slug][$eq]=${memberSlug}`, requestOptions)
+    const response = await fetch(`${process.env.API_URL}/api/members?&populate[0]=avatar&populate[1]=headOfSection&filters[slug][$eq]=${memberSlug}`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
   

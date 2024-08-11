@@ -1,3 +1,5 @@
+import { SingleSection } from "./SectionsType";
+
 export type MemberType = {
       id: number;
       attributes: {
@@ -11,6 +13,9 @@ export type MemberType = {
         degree: string | null | undefined;
         therapyType: string | null | undefined;
         slug: string;
+        headOfSection?: {
+          data: SingleSection
+        }
         avatar: {
           data: {
             id: number;

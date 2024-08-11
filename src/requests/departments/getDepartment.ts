@@ -12,7 +12,7 @@ async function getDepartment(departmentSlug: string) {
       next: { revalidate: 60 }
     };
   
-    const response = await fetch(`${process.env.API_URL}/api/departments/?populate[headOfDep][populate][0]=avatar&populate[members][populate][0]=avatar&filters[slug][$eq]=${departmentSlug}`, requestOptions)
+    const response = await fetch(`${process.env.API_URL}/api/departments/?populate[headOfDep][populate][0]=avatar&populate[headOfDep][populate][1]=headOfSection&populate[members][populate][0]=avatar&filters[slug][$eq]=${departmentSlug}`, requestOptions)
     .then(response => response.json())
     .catch(error => console.log('error', error));
   

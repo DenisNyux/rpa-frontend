@@ -4,6 +4,7 @@ import { DepartmentData } from "@/types/DepartmentsType";
 import getDepartment from "@/requests/departments/getDepartment";
 import DepartmentHead from "@/components/Department/DepartmentMembers/DepartmentHead/DepartmentHead";
 import DepartmentMembers from "@/components/SharedComponents/DepartmentMembers/DepartmentMembers";
+import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/RoundSquareLink";
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
 
 type DepartmentPageProps = {
@@ -24,17 +25,25 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
 
   const headOfDepartment = department?.data[0].attributes.headOfDep.data;
 
-  const memberArr = department?.data[0].attributes.members.data
+  const memberArr = department?.data[0].attributes.members.data;
 
   const sortedMembers = memberArr.sort((a, b) => {
     return a.attributes.name.localeCompare(b.attributes.name);
-  })
-
+  });
   return (
     <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
-      <Link href={"/departments"} className=" text-[#5E050D] text-base leading-5">← Назад</Link>
+      <Link
+        href={"/departments"}
+        className=" text-[#5E050D] text-base leading-5"
+      >
+        ← Назад
+      </Link>
 
-      <h2 className="uppercase mt-6">{department.data[0].attributes.depTitle}</h2>
+      <h2 className="uppercase mt-6">
+        {department.data[0].attributes.depTitle}
+      </h2>
+
+
       {headOfDepartment && (
         <DepartmentHead
           headName={headOfDepartment.attributes.name}
@@ -47,7 +56,23 @@ async function DepartmentPage({ params }: DepartmentPageProps) {
         />
       )}
 
-      {memberArr.length > 0 ? <> <LineSeparatedHeader headerTitle="Члены отделения" headerColor="rgba(0, 0, 0, 0.50)" className="mt-6" ></LineSeparatedHeader><DepartmentMembers membersArr={sortedMembers} depSlug={params.depSlug} isDepartment={true}/></> : ''}
+      {memberArr.length > 0 ? (
+        <>
+          {" "}
+          <LineSeparatedHeader
+            headerTitle="Члены отделения"
+            headerColor="rgba(0, 0, 0, 0.50)"
+            className="mt-6"
+          ></LineSeparatedHeader>
+          <DepartmentMembers
+            membersArr={sortedMembers}
+            depSlug={params.depSlug}
+            isDepartment={true}
+          />
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

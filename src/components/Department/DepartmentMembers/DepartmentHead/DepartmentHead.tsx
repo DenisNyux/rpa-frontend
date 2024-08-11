@@ -1,5 +1,6 @@
 import LineSeparatedHeader from "@/components/SharedComponents/LineSeparatedHeader/LineSeparatedHeader";
 import DepartmentSingleMember from "../../../SharedComponents/DepartmentSingleMember/DepartmentSingleMember";
+import RoundSquareLink from "@/components/SharedComponents/RoundSquareLink/RoundSquareLink";
 import getFullImageUrl from "@/lib/getFullImageUrl";
 
 type DepartmentHeadProps = {
@@ -10,9 +11,20 @@ type DepartmentHeadProps = {
   headImage: string | null | undefined;
   headSlug: string;
   depSlug: string;
-}
+  secTitle?: string;
+  secSlug?: string;
+};
 
-function DepartmentHead({headName, headEducation, headJob, headContacts, headImage, headSlug, depSlug}: DepartmentHeadProps) {
+function DepartmentHead({
+  headName,
+  headEducation,
+  headJob,
+  headContacts,
+  headImage,
+  headSlug,
+  depSlug,
+}: DepartmentHeadProps) {
+
   return (
     <div className="my-8">
       <LineSeparatedHeader
@@ -30,9 +42,16 @@ function DepartmentHead({headName, headEducation, headJob, headContacts, headIma
           depSlug={depSlug}
           isDepartment={true}
         />
-       
-       
+        <div></div>
 
+        <div className="flex flex-col">
+          {depSlug === "moskva" && (
+            <RoundSquareLink
+              linkTitle={"Страница московского отделения"}
+              url="https://msk.rpa-russia.ru"
+            />
+          )}
+        </div>
       </div>
     </div>
   );
