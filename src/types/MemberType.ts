@@ -14,7 +14,7 @@ export type MemberType = {
         therapyType: string | null | undefined;
         slug: string;
         headOfSection?: {
-          data: SingleSection
+          data: SingleSection | null
         }
         avatar: {
           data: {

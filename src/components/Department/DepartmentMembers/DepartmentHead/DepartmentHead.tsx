@@ -46,10 +46,16 @@ function DepartmentHead({
 
         <div className="flex flex-col">
           {depSlug === "moskva" && (
+            <>
             <RoundSquareLink
               linkTitle={"Страница московского отделения"}
               url="https://msk.rpa-russia.ru"
             />
+            <RoundSquareLink
+              linkTitle={"Оплатить членский взнос"}
+              url="https://msk.rpa-russia.ru/pay"
+            />
+</>
           )}
         </div>
       </div>
