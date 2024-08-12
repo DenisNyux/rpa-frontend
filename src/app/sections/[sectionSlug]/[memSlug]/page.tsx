@@ -22,8 +22,8 @@ async function MemberPage({ params }: MemberPageProps) {
   const memberObj = await memberData;
   const member = memberObj.data[0].attributes;
 
-  const sectTitle = member.headOfSection?.data.attributes.sectionTitle
-  const sectSlug = member.headOfSection?.data.attributes.sectionSlug
+  const sectTitle = member.headOfSection?.data?.attributes.sectionTitle
+  const sectSlug = member.headOfSection?.data?.attributes.sectionSlug
   
   return <div className="mt-6 mb-12 mx-20 lg:mx-12 xs:mx-8">
     
