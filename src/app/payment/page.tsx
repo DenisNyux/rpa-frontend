@@ -26,7 +26,7 @@ async function Payment() {
      
 
       <PaymentForm merchantId={robokassaLogin} merchantPassword={robokassaPassword}></PaymentForm>
-      
+      <hr className="my-6"/>
       <div className="grid grid-cols-2 gap-6 mt-6 md:grid-cols-1 ">
         {documents.map((document, index) => {
           return (

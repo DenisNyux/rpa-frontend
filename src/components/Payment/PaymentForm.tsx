@@ -24,8 +24,10 @@ function PaymentForm({ merchantId, merchantPassword }: PaymentFormProps) {
   const [resultLink, setResultLink] = useState<string | undefined>(undefined);
   const [errorList, setErrorList] =
     useState<ZodFormattedError<FormType> | null>();
-
   const [isPayButtonDisabled, setIsPayButtonDisabled] = useState(true);
+  const [paymentType, setPaymentType] = useState<
+    "member" | "moscowMember" | null
+  >(null);
 
   const formSchema = z
     .object({
@@ -79,75 +81,84 @@ function PaymentForm({ merchantId, merchantPassword }: PaymentFormProps) {
 
   return (
     <div className="flex justify-center my-20">
-      <form
-        className={`flex flex-col gap-3 styles w-1/2 lg:w-full ${styles.paymentForm}`}
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <div>
-          <label htmlFor="amount">Введите, пожалуйста, сумму платежа</label>
-          <input
-            type="number"
-            id="amount"
-            min={10}
-            max={100000}
-            value={formData.amount}
-            onInput={(e) =>
-              setFormData({
-                ...formData,
-                amount: Number((e.target as HTMLInputElement).value),
-              })
-            }
-          />
-          <span className="text-red-500">
-            {errorList?.amount?._errors?.map((error) => (
-              <p key={error}>{error}</p>
-            ))}
-          </span>
+      {paymentType === null && (
+        <div className="flex gap-3">
+          <a className="bg-[#5e050d] text-white p-2 rounded-md" href="https://msk.rpa-russia.ru/pay">Московское отделение</a>
+          <button className="bg-[#5e050d] text-white p-2 rounded-md" onClick={() => setPaymentType("member")}>Другое отделение</button>
         </div>
-        <div>
-          <label htmlFor="name">Введите, пожалуйста, ваше имя</label>
-          <input
-            type="text"
-            id="name"
-            onInput={(e) =>
-              setFormData({
-                ...formData,
-                name: (e.target as HTMLInputElement).value,
-              })
-            }
-            onKeyUp={(e) => {
-              const target = e.target as HTMLInputElement;
-              const sepName = target.value.split(" ");
-              const resultName = sepName.map((item) => {
-                if (item.length > 0) {
-                  return item[0].toUpperCase() + item.slice(1);
-                } else {
-                  item;
-                }
-              });
-              target.value = resultName.join(" ");
-            }}
-          />
-          <span className="text-red-500">
-            {errorList?.name?._errors?.map((error) => (
-              <p key={error}>{error}</p>
-            ))}
-          </span>
-        </div>
+      )}
+      {paymentType === "member" && (
+        <form
+          className={`flex flex-col gap-3 styles w-1/2 lg:w-full ${styles.paymentForm}`}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <button className="text-[#5e050d] p-2 rounded-md self-baseline underline" onClick={() => {setPaymentType(null);}}>← Назад</button>
+          <div>
+            <label htmlFor="amount">Введите, пожалуйста, сумму платежа</label>
+            <input
+              type="number"
+              id="amount"
+              min={10}
+              max={100000}
+              value={formData.amount}
+              onInput={(e) =>
+                setFormData({
+                  ...formData,
+                  amount: Number((e.target as HTMLInputElement).value),
+                })
+              }
+            />
+            <span className="text-red-500">
+              {errorList?.amount?._errors?.map((error) => (
+                <p key={error}>{error}</p>
+              ))}
+            </span>
+          </div>
+          <div>
+            <label htmlFor="name">Введите, пожалуйста, ваше имя</label>
+            <input
+              type="text"
+              id="name"
+              onInput={(e) =>
+                setFormData({
+                  ...formData,
+                  name: (e.target as HTMLInputElement).value,
+                })
+              }
+              onKeyUp={(e) => {
+                const target = e.target as HTMLInputElement;
+                const sepName = target.value.split(" ");
+                const resultName = sepName.map((item) => {
+                  if (item.length > 0) {
+                    return item[0].toUpperCase() + item.slice(1);
+                  } else {
+                    item;
+                  }
+                });
+                target.value = resultName.join(" ");
+              }}
+            />
+            <span className="text-red-500">
+              {errorList?.name?._errors?.map((error) => (
+                <p key={error}>{error}</p>
+              ))}
+            </span>
+          </div>
 
-        {isPayButtonDisabled ? (
-          <a className={`w-full flex justify-center bg-zinc-400`}>Оплатить</a>
-        ) : (
-          <a
-            href={resultLink}
-            className={`w-full flex justify-center bg-[#5e050d]`}
-          >
-            Оплатить
-          </a>
-        )}
-      </form>
+          {isPayButtonDisabled ? (
+            <a className={`w-full flex justify-center bg-zinc-400`}>Оплатить</a>
+          ) : (
+            <a
+              href={resultLink}
+              className={`w-full flex justify-center bg-[#5e050d]`}
+            >
+              Оплатить
+            </a>
+          )}
+        </form>
+      )}
     </div>
   );
 }
