@@ -64,7 +64,7 @@ async function SingleSectionPage({ params }: SingleSectionPageProps) {
               </>
             )}
 
-          {singleSection.sectionDocuments.data.length > 0 && (
+          {singleSection.sectionDocuments.data?.length > 0 && (
             <LineSeparatedHeader
               headerTitle="Документы"
               headerColor="#5e050d"
@@ -72,7 +72,7 @@ async function SingleSectionPage({ params }: SingleSectionPageProps) {
           )}
 
           <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-1">
-            {singleSection.sectionDocuments.data.map((doc) => {
+            {singleSection.sectionDocuments.data?.map((doc) => {
               return (
                 <DocumentCard
                   key={`${params.sectionSlug}-${doc.id}`}

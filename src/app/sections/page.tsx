@@ -25,7 +25,7 @@ async function Sections() {
       <span className="text-base flex flex-col gap-3 lg:text-xl">
         На данной странице вы можете ознакомиться со всеми секциями РПА
       </span>
-      <div className="p-4">
+      <div className="p-4 grid grid-cols-2 gap-8 mt-6">
         {sectionsList.map((section, index) => {
           return (
             <RoundSquareLink
