@@ -36,6 +36,7 @@ async function MemberPage({ params }: MemberPageProps) {
           className="w-full rounded-[10px]"
           width={300}
           height={400}
+          unoptimized={true}
         ></Image>
       </div>
       <div className={`col-span-3 flex flex-col ${styles.memberText} gap-5 lg:col-span-2 sm:col-span-1`}>

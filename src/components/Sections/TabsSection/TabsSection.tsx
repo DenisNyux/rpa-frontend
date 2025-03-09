@@ -52,6 +52,7 @@ const TabsSection: FC<TabsSectionProps> = ({
                                 width={image.width}
                                 height={image.height}
                                 alt={image.alternativeText || ""}
+                                unoptimized={true}
                               />
                             );
                           },
@@ -118,6 +119,7 @@ const TabsSection: FC<TabsSectionProps> = ({
                               width={image.width}
                               height={image.height}
                               alt={image.alternativeText || ""}
+                              unoptimized={true}
                             />
                           );
                         },

@@ -23,6 +23,7 @@ const OneLineMember: FC<OneLineMemberProps> = ({ name, avatarUrl, url }) => {
         width={32}
         height={32}
         className="rounded-full"
+        unoptimized={true}
       ></Image>
       </div>
       {name && <h4 className={styles.memberName}>{name}</h4>}

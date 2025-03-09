@@ -37,6 +37,7 @@ function DepartmentSingleMember({
             alt="member-photo"
             width={300}
             height={400}
+            unoptimized={true}
             ></Image>
         </div>
         <div className={`${styles.departmentCard__information} flex flex-col justify-between gap-4`}>

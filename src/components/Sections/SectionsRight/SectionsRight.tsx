@@ -46,6 +46,7 @@ const SectionsRight: FC<SectionsRightProps> = ({
                 width={300}
                 height={300}
                 className="w-full rounded-[10px]"
+                unoptimized={true}
               />
             </div>
           </>

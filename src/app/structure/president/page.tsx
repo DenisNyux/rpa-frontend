@@ -35,6 +35,7 @@ async function PresidentPage() {
             className="w-full rounded-[10px]"
             width={300}
             height={400}
+            unoptimized={true}
           ></Image>
         </div>
         <div

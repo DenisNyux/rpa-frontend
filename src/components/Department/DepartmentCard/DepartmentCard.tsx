@@ -30,7 +30,7 @@ function DepartmentCard({
       >
         <h4 className="mx-2 mt-4 text-center">{departmentName}</h4>
         <div className="flex justify-center py-2">
-          <Image src={depImage} width={100} height={100} alt="link-ico" />
+          <Image src={depImage} width={100} height={100} alt="link-ico" unoptimized={true} />
         </div>
       </div>
     </Link>

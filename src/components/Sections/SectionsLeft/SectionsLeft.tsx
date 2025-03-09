@@ -27,6 +27,7 @@ const SectionsLeft: FC<SectionsLeftProps> = ({ sectionDescription }) => {
                   width={image.width}
                   height={image.height}
                   alt={image.alternativeText || ""}
+                  unoptimized={true}
                 />
               );
             },
