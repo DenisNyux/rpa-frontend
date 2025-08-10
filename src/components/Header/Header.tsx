@@ -131,13 +131,13 @@ function Header() {
           href: "/events/ezhemesyachnye-vstrechi-ro-rpa",
           submenu: null,
         },
-        // {
-        //   id: "2-3",
-        //   label: "Конференции",
-        //   name: "conferences",
-        //   href: "/conferences",
-        //   submenu: null,
-        // },
+        {
+          id: "2-3",
+          label: "Конференции",
+          name: "conferences",
+          href: "/conferences",
+          submenu: null,
+        },
         {
           id: "2-4",
           label: "Сертифицированные программы",
@@ -187,6 +187,13 @@ function Header() {
       label: "Секции",
       name: "sections",
       href: "/sections",
+      submenu: null,
+    },
+    {
+      id: "9",
+      label: "Конференции",
+      name: "conferences",
+      href: "/conferences",
       submenu: null,
     },
   ];

@@ -9,7 +9,7 @@ async function getMember(memberSlug: string) {
     const requestOptions = {
       method: "GET",
       headers: myHeaders,
-      next: { revalidate: 60 }
+      next: { revalidate: 0 }
     };
   
     const response = await fetch(`${process.env.API_URL}/api/members?&populate[0]=avatar&populate[1]=headOfSection&filters[slug][$eq]=${memberSlug}`, requestOptions)

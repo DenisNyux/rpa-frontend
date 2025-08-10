@@ -6,7 +6,7 @@ async function getAboutRpaText() {
   const requestOptions = {
     method: "GET",
     headers: myHeaders,
-    next: { revalidate: 3600 }
+    next: { revalidate: 0 }
   };
 
   const response = await fetch(

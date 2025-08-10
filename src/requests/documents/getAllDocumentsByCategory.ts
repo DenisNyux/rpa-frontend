@@ -9,7 +9,7 @@ async function getAllDocumentsByCategory() {
     const requestOptions = {
       method: "GET",
       headers: myHeaders,
-      next: { revalidate: 60 }
+      next: { revalidate: 0 }
     };
   
     const response = await fetch(`${process.env.API_URL}/api/catdocuments?populate[relatedDocs][populate][0]=mainDocument, documentAttachments`, requestOptions)

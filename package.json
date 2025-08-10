@@ -15,6 +15,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
+    "dayjs": "^1.11.13",
     "eslint": "8.44.0",
     "eslint-config-next": "^14.2.5",
     "md5": "^2.3.0",
@@ -22,11 +23,16 @@
     "postcss": "8.4.25",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-google-recaptcha-v3": "^1.11.0",
+    "react-input-mask": "^2.0.4",
     "react-responsive-modal": "^6.4.2",
     "react-tabs": "^6.0.2",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6",
     "zod": "^3.22.4"
   },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "devDependencies": {
+    "@types/react-input-mask": "^3.0.6"
+  }
 }
