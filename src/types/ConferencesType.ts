@@ -12,6 +12,7 @@ export type SingleConference = {
     conferenceLocation: string | null;
     conferencePrice: string | null;
     conferenceSlug: string;
+    disableRegistration: boolean | null;
     conferenceProgram: BlocksContent | null;
     speakers?: { data: MemberType[] } | null;
     participationConditions?: BlocksContent | null;

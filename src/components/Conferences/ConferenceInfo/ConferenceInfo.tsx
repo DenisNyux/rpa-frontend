@@ -113,22 +113,31 @@ function ConferenceInfo({ conference, apiUrl }: ConferenceInfoProps) {
       <SpeakersSection speakers={attributes.speakersAtConference} />
 
       {/* Кнопки действий */}
-      <div className={styles.actions}>
-        {conferenceType === "upcoming" ? (
-          <button
-            onClick={() => setIsRegistrationModalOpen(true)}
-            className={styles.actionButton}
-          >
-            Зарегистрироваться
-          </button>
-        ) : (
-          <RoundSquareLink
-            linkTitle="📄 Материалы конференции"
-            url="#"
-            className={`${styles.actionButton} ${styles.secondaryButton}`}
-          />
-        )}
-      </div>
+
+      {attributes.disableRegistration && (
+        <div className={styles.registrationClosed}>
+          Регистрация откроется в ближайшее время. Пожалуйста, свяжитесь с нами
+          для получения дополнительной информации.
+        </div>
+      )}
+      {!attributes.disableRegistration && (
+        <div className={styles.actions}>
+          {conferenceType === "upcoming" ? (
+            <button
+              onClick={() => setIsRegistrationModalOpen(true)}
+              className={styles.actionButton}
+            >
+              Зарегистрироваться
+            </button>
+          ) : (
+            <RoundSquareLink
+              linkTitle="📄 Материалы конференции"
+              url="#"
+              className={`${styles.actionButton} ${styles.secondaryButton}`}
+            />
+          )}
+        </div>
+      )}
 
       {/* Модальное окно регистрации */}
       <ConferenceRegistrationModal
