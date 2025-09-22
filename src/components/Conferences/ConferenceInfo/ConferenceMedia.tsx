@@ -13,8 +13,8 @@ const ConferenceMedia: FC<ConferenceMediaProps> = ({ conference, apiUrl }) => {
   const images = conference.attributes.promoImage.data;
   const documents = conference.attributes.conferenceDocuments?.data || [];
   
-  const hasImages = images.length > 0;
-  const hasDocuments = documents.length > 0;
+  const hasImages = images && images.length > 0;
+  const hasDocuments = documents && documents.length > 0;
   
   if (!hasImages && !hasDocuments) {
     return null;

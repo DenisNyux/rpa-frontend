@@ -17,6 +17,7 @@ type ConferenceInfoProps = {
 
 function ConferenceInfo({ conference, apiUrl }: ConferenceInfoProps) {
   const { attributes } = conference;
+  console.log('conference', conference);
   const conferenceType = getConferenceType(conference);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
@@ -84,6 +85,15 @@ function ConferenceInfo({ conference, apiUrl }: ConferenceInfoProps) {
         <CollapsibleTextSection
           title="Программа конференции"
           content={attributes.conferenceProgram}
+          isInitiallyExpanded={false}
+        />
+      )}
+
+      {/* Расписание конференции */}
+      {attributes.scheduleText && (
+        <CollapsibleTextSection
+          title="Расписание конференции"
+          content={attributes.scheduleText}
           isInitiallyExpanded={false}
         />
       )}
