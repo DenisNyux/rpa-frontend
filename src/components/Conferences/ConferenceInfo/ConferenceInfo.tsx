@@ -17,7 +17,6 @@ type ConferenceInfoProps = {
 
 function ConferenceInfo({ conference, apiUrl }: ConferenceInfoProps) {
   const { attributes } = conference;
-  console.log('conference', conference);
   const conferenceType = getConferenceType(conference);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 

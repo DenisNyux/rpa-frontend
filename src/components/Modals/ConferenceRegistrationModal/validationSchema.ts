@@ -39,6 +39,7 @@ export const conferenceRegistrationSchema = z.object({
     .string()
     .min(2, "Название организации должно содержать минимум 2 символа")
     .max(200, "Название организации не должно превышать 200 символов")
+    .or(z.literal(""))
     .optional(),
   position: z
     .string()
