@@ -161,7 +161,7 @@ export const hasFieldSuccess = (
 export const createFieldClasses = (
   hasError: boolean,
   hasSuccess: boolean,
-  styles: any
+  styles: Record<string, string>
 ): string => {
   const classes = [styles.formControl];
   

@@ -57,6 +57,8 @@ export interface RenderFieldParams {
   name: keyof ConferenceRegistrationFormData;
   /** Конфигурация поля */
   config: FormFieldConfig;
+  /** Уникальный ключ для React */
+  key?: string;
 }
 
 /**

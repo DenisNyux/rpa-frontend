@@ -110,12 +110,14 @@ const ConferenceRegistrationModal: FC<ConferenceRegistrationModalProps> = ({
               {FORM_SECTIONS.PERSONAL}
             </h3>
 
-            {Object.entries(FORM_FIELDS.PERSONAL_DATA).map(([fieldName, config]) =>
-              renderField({
-                name: fieldName as keyof typeof formData,
-                config: config as any,
-              })
-            )}
+            {Object.entries(FORM_FIELDS.PERSONAL_DATA).map(([fieldName, config]) => (
+              <div key={fieldName}>
+                {renderField({
+                  name: fieldName as keyof typeof formData,
+                  config: config as any,
+                })}
+              </div>
+            ))}
           </div>
 
           {/* Секция: Профессиональная информация */}
@@ -124,12 +126,14 @@ const ConferenceRegistrationModal: FC<ConferenceRegistrationModalProps> = ({
               {FORM_SECTIONS.PROFESSIONAL}
             </h3>
 
-            {Object.entries(FORM_FIELDS.PROFESSIONAL_DATA).map(([fieldName, config]) =>
-              renderField({
-                name: fieldName as keyof typeof formData,
-                config: config as any,
-              })
-            )}
+            {Object.entries(FORM_FIELDS.PROFESSIONAL_DATA).map(([fieldName, config]) => (
+              <div key={fieldName}>
+                {renderField({
+                  name: fieldName as keyof typeof formData,
+                  config: config as any,
+                })}
+              </div>
+            ))}
           </div>
 
           {/* Секция: Дополнительная информация */}
@@ -137,12 +141,14 @@ const ConferenceRegistrationModal: FC<ConferenceRegistrationModalProps> = ({
             <h3 className={`${typography.h3} ${colors.primary}`}>
               {FORM_SECTIONS.ADDITIONAL}
             </h3>
-            {Object.entries(FORM_FIELDS.ADDITIONAL_DATA).map(([fieldName, config]) =>
-              renderField({
-                name: fieldName as keyof typeof formData,
-                config: config as any,
-              })
-            )}
+            {Object.entries(FORM_FIELDS.ADDITIONAL_DATA).map(([fieldName, config]) => (
+              <div key={fieldName}>
+                {renderField({
+                  name: fieldName as keyof typeof formData,
+                  config: config as any,
+                })}
+              </div>
+            ))}
           </div>
 
           {/* Сообщение о результате отправки формы */}
